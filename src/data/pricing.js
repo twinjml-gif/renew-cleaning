@@ -40,8 +40,8 @@ export const prices = [
     service: { nl: "Overige diensten", en: "Other services" },
     price: { nl: "Prijs op aanvraag", en: "Price on request" },
     detail: {
-      nl: "Voor stoelen, auto-interieur, bootinterieur, zakelijke ruimtes en speciale aanvragen.",
-      en: "For chairs, car interiors, boat interiors, business spaces and special requests.",
+      nl: "Voor stoelen, bootinterieur, zakelijke ruimtes en speciale reinigingsaanvragen.",
+      en: "For chairs, boat interiors, business spaces and special cleaning requests.",
     },
   },
 ];

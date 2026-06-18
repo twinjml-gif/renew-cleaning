@@ -1,9 +1,8 @@
-import { Building2, Car, Compass, MessageCircle, Moon, ShieldCheck, Sparkles, Star } from "lucide-react";
+import { Building2, Compass, MessageCircle, Moon, ShieldCheck, Sparkles, Star } from "lucide-react";
 import { useLanguage } from "./LanguageProvider.jsx";
 
 const iconMap = {
   building: Building2,
-  car: Car,
   compass: Compass,
   message: MessageCircle,
   moon: Moon,

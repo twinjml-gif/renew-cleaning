@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import FloatingWhatsApp from "./components/FloatingWhatsApp.jsx";
 import Footer from "./components/Footer.jsx";
 import LanguageProvider from "./components/LanguageProvider.jsx";
 import Navbar from "./components/Navbar.jsx";
@@ -31,6 +32,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <FloatingWhatsApp />
       </div>
     </LanguageProvider>
   );

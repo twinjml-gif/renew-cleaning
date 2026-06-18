@@ -1,7 +1,7 @@
 export const siteContent = {
   nl: {
     common: {
-      requestQuote: "Prijs aanvragen",
+      requestQuote: "Prijs aanvragen via WhatsApp",
       whatsapp: "WhatsApp",
       call: "Bellen",
       email: "E-mail",
@@ -17,95 +17,95 @@ export const siteContent = {
         "Voor een exacte prijs kunt u foto's sturen via WhatsApp. Op basis daarvan ontvangt u een passende prijs.",
     },
     home: {
-      eyebrow: "Luxe interieurreiniging op locatie",
-      title: "RenewCleaning – geef uw interieur een tweede leven.",
+      eyebrow: "Premium reiniging op locatie",
+      title: "RenewCleaning - geef uw interieur een tweede leven.",
       subtitle: "Luxe reiniging aan huis voor meubels, matrassen, kinderwagens en meer.",
       intro:
-        "RenewCleaning helpt particuliere en zakelijke klanten met een verzorgde, professionele reiniging op locatie. Strak gepland, helder gecommuniceerd en uitgevoerd met oog voor uw interieur.",
-      heroImageAlt: "Luxe interieur placeholder voor RenewCleaning",
+        "RenewCleaning reinigt meubels, matrassen, tapijt, kinderwagens, bootinterieurs en zakelijke ruimtes met een zorgvuldige werkwijze en een premium uitstraling. U stuurt foto's via WhatsApp, wij beoordelen de situatie en geven een heldere prijs.",
+      heroImageAlt: "Luxe interieurreiniging door RenewCleaning",
       highlights: [
-        "Professionele reiniging aan huis",
-        "Heldere prijs op basis van foto's",
-        "Ook buiten Leiden beschikbaar",
+        "WhatsApp als snelste prijsaanvraag",
+        "Zorgvuldige reiniging aan huis",
+        "Ook buiten Leiden mogelijk",
       ],
-      qualityTitle: "Premium service zonder gedoe",
+      qualityTitle: "Verzorgd, discreet en professioneel",
       qualityText:
-        "U stuurt foto's, wij beoordelen de situatie en u ontvangt een passende prijs. Zo weet u vooraf waar u aan toe bent.",
+        "U krijgt duidelijke communicatie, nette uitvoering op locatie en een afwerking die past bij een verzorgd interieur.",
       sections: {
-        servicesTitle: "Populaire diensten",
+        servicesTitle: "Luxe reiniging voor uw interieur",
         servicesText:
-          "Van banken en matrassen tot zakelijke ruimtes: RenewCleaning richt zich op zorgvuldig werk met een luxe uitstraling.",
-        resultsTitle: "Resultaten die vertrouwen geven",
+          "Van banken en matrassen tot tapijt, kinderwagens, bootinterieurs en zakelijke ruimtes: RenewCleaning werkt zorgvuldig, helder en stijlvol.",
+        resultsTitle: "Representatieve resultaten",
         resultsText:
-          "De huidige afbeeldingen zijn placeholders. U kunt ze later eenvoudig vervangen door echte resultaten.",
+          "Deze pagina toont nette impressies van het type werk. Echte voor-en-na foto's kunnen later eenvoudig worden toegevoegd.",
       },
     },
     servicesPage: {
       eyebrow: "Diensten",
-      title: "Reiniging voor meubels, textiel en interieurs",
+      title: "Specialistische reiniging voor meubels, textiel en interieurs",
       subtitle:
-        "Kies voor een verzorgde behandeling op locatie. Bij twijfel kunt u altijd foto's sturen via WhatsApp.",
-      ctaTitle: "Heeft u een specifieke aanvraag?",
+        "Iedere opdracht wordt beoordeeld op materiaal, formaat, bereikbaarheid en vervuiling. Stuur foto's via WhatsApp voor een passende prijs.",
+      ctaTitle: "Wilt u weten wat uw reiniging kost?",
       ctaText:
-        "Stuur foto's en een korte omschrijving. Wij kijken met u mee en geven een passende prijs.",
+        "Stuur foto's en een korte omschrijving via WhatsApp. U ontvangt snel een duidelijke prijs en advies over de mogelijkheden.",
     },
     pricingPage: {
       eyebrow: "Prijzen",
-      title: "Transparante vanafprijzen",
+      title: "Heldere vanafprijzen met maatwerk per opdracht",
       subtitle:
-        "Elke situatie is anders. Daarom werken wij met duidelijke vanafprijzen en een exacte prijs op basis van foto's.",
+        "De vanafprijzen geven richting. De exacte prijs bepalen wij zorgvuldig op basis van foto's, formaat, materiaal en de staat van het object.",
       noteTitle: "Exacte prijs via WhatsApp",
       noteText:
         "Voor een exacte prijs kunt u foto's sturen via WhatsApp. Op basis daarvan ontvangt u een passende prijs.",
     },
     resultsPage: {
       eyebrow: "Resultaten",
-      title: "Een frisse uitstraling voor uw interieur",
+      title: "Een verzorgde uitstraling voor uw interieur",
       subtitle:
-        "Gebruik deze sectie om later echte voor-en-na foto's, apparatuur en werkwijze te tonen.",
+        "Bekijk representatieve impressies van het soort reiniging dat RenewCleaning uitvoert. Echte projectfoto's kunnen later worden toegevoegd zonder de opbouw van de website te wijzigen.",
     },
     businessPage: {
       eyebrow: "Zakelijk",
-      title: "Professionele reiniging voor bedrijven",
+      title: "Professionele reiniging voor bedrijven en zakelijke ruimtes",
       subtitle:
-        "Voor kantoren, salons, wachtruimtes, horeca, verhuur en andere zakelijke ruimtes maken wij graag een offerte op maat.",
+        "RenewCleaning maakt offertes op maat voor kantoren, salons, wachtruimtes, horeca, verhuur, boten/interieur en andere zakelijke locaties.",
       points: [
-        "Maatwerk op basis van locatie, aantallen en planning",
-        "Geschikt voor periodieke of eenmalige reiniging",
-        "Duidelijke communicatie voor en tijdens de opdracht",
+        "Offertes op maat op basis van locatie, planning en aantallen",
+        "Geschikt voor eenmalige en periodieke reiniging",
+        "Representatieve uitstraling voor klanten, gasten en medewerkers",
       ],
-      ctaTitle: "Zakelijke offerte aanvragen",
+      ctaTitle: "Vraag een zakelijke offerte aan",
       ctaText:
-        "Stuur foto's, aantallen en de locatie via WhatsApp of e-mail. U ontvangt daarna een passende offerte.",
+        "Stuur foto's, aantallen, gewenste planning en locatie via WhatsApp of e-mail. Daarna ontvangt u een passende zakelijke offerte.",
     },
     aboutPage: {
       eyebrow: "Over ons",
-      title: "RenewCleaning staat voor zorgvuldige reiniging met uitstraling",
+      title: "RenewCleaning staat voor zorgvuldigheid, hygiëne en nette afwerking",
       subtitle:
-        "Vanuit Leiden helpt RenewCleaning klanten die hun meubels, matrassen en interieurs serieus willen laten reinigen.",
+        "Vanuit Leiden helpt RenewCleaning particuliere en zakelijke klanten die hun meubels, matrassen en interieurs serieus willen laten reinigen.",
       body:
-        "Onze aanpak is persoonlijk en duidelijk: u laat zien wat gereinigd moet worden, wij geven een eerlijke inschatting en voeren het werk netjes op locatie uit. Het resultaat moet schoon, verzorgd en betrouwbaar aanvoelen.",
+        "Onze werkwijze is helder en professioneel: u stuurt foto's, wij geven een eerlijke inschatting en voeren de reiniging netjes op locatie uit. Wij werken met respect voor uw woning, bedrijf en interieur, zodat het resultaat schoon, fris en verzorgd aanvoelt.",
       values: [
-        "Respect voor uw woning, kantoor en interieur",
-        "Heldere afspraken zonder ingewikkeld proces",
-        "Luxe uitstraling met praktische service",
+        "Duidelijke communicatie vooraf",
+        "Zorgvuldige behandeling van materialen",
+        "Nette uitvoering aan huis of op locatie",
       ],
     },
     faqPage: {
       eyebrow: "FAQ",
       title: "Veelgestelde vragen",
       subtitle:
-        "Hier vindt u antwoorden op de meest voorkomende vragen over prijzen, locatie, droogtijd en werkwijze.",
+        "Antwoorden op vragen over foto's sturen, prijzen, droogtijd, vlekken, werken buiten Leiden en zakelijke offertes.",
     },
     contactPage: {
       eyebrow: "Contact",
-      title: "Vraag direct een prijs aan",
+      title: "Vraag snel en eenvoudig een prijs aan",
       subtitle:
-        "Stuur foto's via WhatsApp voor de snelste en meest nauwkeurige prijsinschatting.",
+        "WhatsApp is de snelste optie. Stuur duidelijke foto's en een korte omschrijving, dan ontvangt u een passende prijs.",
       detailsTitle: "Contactgegevens",
       socialsTitle: "Social media",
       socialsText:
-        "Deze knoppen zijn placeholders en kunnen later worden gekoppeld aan de officiële accounts.",
+        "Deze social media knoppen zijn voorbereid als placeholders en kunnen later aan de officiële accounts worden gekoppeld.",
       mailSubject: "Aanvraag reiniging via RenewCleaning.nl",
       mailBody:
         "Beste RenewCleaning,%0D%0A%0D%0AIk ontvang graag een prijs voor reiniging.%0D%0A%0D%0AType dienst:%0D%0ALocatie:%0D%0AFoto's voeg ik toe als bijlage.%0D%0A%0D%0AMet vriendelijke groet,",
@@ -118,7 +118,7 @@ export const siteContent = {
   },
   en: {
     common: {
-      requestQuote: "Request a price",
+      requestQuote: "Request a price via WhatsApp",
       whatsapp: "WhatsApp",
       call: "Call",
       email: "Email",
@@ -134,95 +134,95 @@ export const siteContent = {
         "For an exact price, you can send photos via WhatsApp. Based on those photos, you will receive a suitable price.",
     },
     home: {
-      eyebrow: "Luxury interior cleaning on location",
-      title: "RenewCleaning – give your interior a second life.",
+      eyebrow: "Premium on-location cleaning",
+      title: "RenewCleaning - give your interior a second life.",
       subtitle: "Luxury at-home cleaning for furniture, mattresses, strollers and more.",
       intro:
-        "RenewCleaning helps private and business clients with refined, professional cleaning on location. Clearly planned, carefully communicated and carried out with respect for your interior.",
-      heroImageAlt: "Luxury interior placeholder for RenewCleaning",
+        "RenewCleaning cleans furniture, mattresses, carpets, strollers, boat interiors and business spaces with a careful process and a premium appearance. Send photos via WhatsApp, and we will assess the situation and provide a clear price.",
+      heroImageAlt: "Luxury interior cleaning by RenewCleaning",
       highlights: [
-        "Professional cleaning at your location",
-        "Clear price based on photos",
+        "WhatsApp is the fastest way to request a price",
+        "Careful cleaning at your location",
         "Also available outside Leiden",
       ],
-      qualityTitle: "Premium service without the hassle",
+      qualityTitle: "Refined, discreet and professional",
       qualityText:
-        "You send photos, we assess the situation and you receive a suitable price. That way, you know what to expect in advance.",
+        "You receive clear communication, neat on-location service and a finish that suits a well-kept interior.",
       sections: {
-        servicesTitle: "Popular services",
+        servicesTitle: "Luxury cleaning for your interior",
         servicesText:
-          "From sofas and mattresses to business spaces: RenewCleaning focuses on careful work with a premium appearance.",
-        resultsTitle: "Results that build trust",
+          "From sofas and mattresses to carpets, strollers, boat interiors and business spaces: RenewCleaning works carefully, clearly and with style.",
+        resultsTitle: "Representative results",
         resultsText:
-          "The current images are placeholders. You can easily replace them later with real results.",
+          "This page shows refined impressions of the type of work offered. Real before-and-after photos can be added easily later.",
       },
     },
     servicesPage: {
       eyebrow: "Services",
-      title: "Cleaning for furniture, textiles and interiors",
+      title: "Specialist cleaning for furniture, textiles and interiors",
       subtitle:
-        "Choose a refined treatment on location. If you are unsure, you can always send photos via WhatsApp.",
-      ctaTitle: "Do you have a specific request?",
+        "Every job is assessed based on material, size, accessibility and condition. Send photos via WhatsApp for a suitable price.",
+      ctaTitle: "Would you like to know the cost of your cleaning?",
       ctaText:
-        "Send photos and a short description. We will review it with you and provide a suitable price.",
+        "Send photos and a short description via WhatsApp. You will receive a clear price and advice on the possibilities.",
     },
     pricingPage: {
       eyebrow: "Pricing",
-      title: "Transparent starting prices",
+      title: "Clear starting prices with tailored quotes",
       subtitle:
-        "Every situation is different. That is why we use clear starting prices and an exact price based on photos.",
+        "The starting prices give direction. The exact price is determined carefully based on photos, size, material and condition.",
       noteTitle: "Exact price via WhatsApp",
       noteText:
         "For an exact price, you can send photos via WhatsApp. Based on those photos, you will receive a suitable price.",
     },
     resultsPage: {
       eyebrow: "Results",
-      title: "A fresh appearance for your interior",
+      title: "A refined appearance for your interior",
       subtitle:
-        "Use this section later to show real before-and-after photos, equipment and process images.",
+        "View representative impressions of the type of cleaning RenewCleaning provides. Real project photos can be added later without changing the website structure.",
     },
     businessPage: {
       eyebrow: "Business",
-      title: "Professional cleaning for companies",
+      title: "Professional cleaning for companies and business spaces",
       subtitle:
-        "For offices, salons, waiting areas, hospitality, rentals and other business spaces, we are happy to prepare a tailored quote.",
+        "RenewCleaning prepares tailored quotes for offices, salons, waiting areas, hospitality, rentals, boats/interiors and other business locations.",
       points: [
-        "Tailored to location, quantities and planning",
-        "Suitable for one-time or recurring cleaning",
-        "Clear communication before and during the job",
+        "Tailored quotes based on location, planning and quantities",
+        "Suitable for one-time and recurring cleaning",
+        "A representative appearance for clients, guests and staff",
       ],
       ctaTitle: "Request a business quote",
       ctaText:
-        "Send photos, quantities and the location via WhatsApp or email. You will then receive a suitable quote.",
+        "Send photos, quantities, preferred planning and location via WhatsApp or email. You will then receive a suitable business quote.",
     },
     aboutPage: {
       eyebrow: "About",
-      title: "RenewCleaning stands for careful cleaning with a premium finish",
+      title: "RenewCleaning stands for care, hygiene and refined finishing",
       subtitle:
-        "From Leiden, RenewCleaning helps clients who take the cleaning of their furniture, mattresses and interiors seriously.",
+        "From Leiden, RenewCleaning helps private and business clients who take the cleaning of their furniture, mattresses and interiors seriously.",
       body:
-        "Our approach is personal and clear: you show what needs to be cleaned, we provide an honest estimate and carry out the work neatly on location. The result should feel clean, refined and reliable.",
+        "Our process is clear and professional: you send photos, we provide an honest estimate and carry out the cleaning neatly on location. We work with respect for your home, company and interior, so the result feels clean, fresh and well cared for.",
       values: [
-        "Respect for your home, office and interior",
-        "Clear agreements without a complicated process",
-        "Premium appearance with practical service",
+        "Clear communication in advance",
+        "Careful treatment of materials",
+        "Neat service at home or on location",
       ],
     },
     faqPage: {
       eyebrow: "FAQ",
       title: "Frequently asked questions",
       subtitle:
-        "Find answers to common questions about pricing, location, drying time and process.",
+        "Answers to questions about sending photos, pricing, drying time, stains, working outside Leiden and business quotes.",
     },
     contactPage: {
       eyebrow: "Contact",
-      title: "Request a price directly",
+      title: "Request a price quickly and easily",
       subtitle:
-        "Send photos via WhatsApp for the fastest and most accurate price estimate.",
+        "WhatsApp is the fastest option. Send clear photos and a short description, and you will receive a suitable price.",
       detailsTitle: "Contact details",
       socialsTitle: "Social media",
       socialsText:
-        "These buttons are placeholders and can later be connected to the official accounts.",
+        "These social media buttons are prepared as placeholders and can later be connected to the official accounts.",
       mailSubject: "Cleaning request via RenewCleaning.nl",
       mailBody:
         "Dear RenewCleaning,%0D%0A%0D%0AI would like to receive a price for cleaning.%0D%0A%0D%0AType of service:%0D%0ALocation:%0D%0AI will add photos as attachments.%0D%0A%0D%0AKind regards,",
