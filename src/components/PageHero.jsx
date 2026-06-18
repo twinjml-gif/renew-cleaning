@@ -8,7 +8,7 @@ function PageHero({ eyebrow, title, subtitle, image, imageAlt, children, compact
         <h1>{title}</h1>
         <p className="lead">{subtitle}</p>
         {children ? <div className="hero-extra">{children}</div> : null}
-        {!compact ? <WhatsAppButton /> : null}
+        <WhatsAppButton />
       </div>
       {image ? (
         <div className="page-hero-media">

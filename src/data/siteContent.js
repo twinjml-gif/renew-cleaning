@@ -21,7 +21,7 @@ export const siteContent = {
       title: "RenewCleaning - geef uw interieur een tweede leven.",
       subtitle: "Luxe reiniging aan huis voor meubels, matrassen, kinderwagens en meer.",
       intro:
-        "RenewCleaning reinigt meubels, matrassen, tapijt, kinderwagens, bootinterieurs en zakelijke ruimtes met een zorgvuldige werkwijze en een premium uitstraling. U stuurt foto's via WhatsApp, wij beoordelen de situatie en geven een heldere prijs.",
+        "RenewCleaning reinigt meubels, matrassen, tapijt, kinderwagens, bootinterieurs en zakelijke ruimtes met een rustige, zorgvuldige werkwijze. U stuurt foto's via WhatsApp, wij beoordelen de situatie en geven een heldere prijs.",
       heroImageAlt: "Luxe interieurreiniging door RenewCleaning",
       highlights: [
         "WhatsApp als snelste prijsaanvraag",
@@ -62,7 +62,7 @@ export const siteContent = {
       eyebrow: "Resultaten",
       title: "Een verzorgde uitstraling voor uw interieur",
       subtitle:
-        "Bekijk representatieve impressies van het soort reiniging dat RenewCleaning uitvoert. Echte projectfoto's kunnen later worden toegevoegd zonder de opbouw van de website te wijzigen.",
+        "Bekijk een nette portfolio-indruk van de reinigingen die RenewCleaning uitvoert. Binnenkort worden hier echte projectfoto's aan toegevoegd.",
     },
     businessPage: {
       eyebrow: "Zakelijk",
@@ -138,7 +138,7 @@ export const siteContent = {
       title: "RenewCleaning - give your interior a second life.",
       subtitle: "Luxury at-home cleaning for furniture, mattresses, strollers and more.",
       intro:
-        "RenewCleaning cleans furniture, mattresses, carpets, strollers, boat interiors and business spaces with a careful process and a premium appearance. Send photos via WhatsApp, and we will assess the situation and provide a clear price.",
+        "RenewCleaning cleans furniture, mattresses, carpets, strollers, boat interiors and business spaces with a calm, careful process. Send photos via WhatsApp, and we will assess the situation and provide a clear price.",
       heroImageAlt: "Luxury interior cleaning by RenewCleaning",
       highlights: [
         "WhatsApp is the fastest way to request a price",
@@ -179,7 +179,7 @@ export const siteContent = {
       eyebrow: "Results",
       title: "A refined appearance for your interior",
       subtitle:
-        "View representative impressions of the type of cleaning RenewCleaning provides. Real project photos can be added later without changing the website structure.",
+        "View a refined portfolio impression of the cleaning services RenewCleaning provides. Real project photos will be added here soon.",
     },
     businessPage: {
       eyebrow: "Business",

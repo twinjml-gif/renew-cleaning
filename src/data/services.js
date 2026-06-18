@@ -55,8 +55,8 @@ export const services = [
     image: "/images/boot-interieur-placeholder.jpg",
     title: { nl: "Boot/interieur reinigen", en: "Boat interior cleaning" },
     description: {
-      nl: "Reiniging van bootinterieurs, bekleding en zitgedeeltes op aanvraag, afhankelijk van locatie, materiaal en bereikbaarheid.",
-      en: "Cleaning for boat interiors, upholstery and seating areas on request, depending on location, material and accessibility.",
+      nl: "Professionele reiniging van bootinterieurs, bekleding en zitgedeeltes, zorgvuldig afgestemd op materiaal, locatie en bereikbaarheid.",
+      en: "Professional cleaning for boat interiors, upholstery and seating areas, carefully tailored to material, location and accessibility.",
     },
   },
   {
@@ -75,8 +75,8 @@ export const services = [
     image: "/images/apparatuur-placeholder.jpg",
     title: { nl: "Andere reinigingsaanvragen", en: "Other cleaning requests" },
     description: {
-      nl: "Heeft u een andere aanvraag? Stuur duidelijke foto's via WhatsApp, dan beoordelen wij zorgvuldig wat mogelijk is.",
-      en: "Do you have another request? Send clear photos via WhatsApp and we will carefully assess what is possible.",
+      nl: "Heeft u een specifieke reinigingsvraag? Stuur duidelijke foto's via WhatsApp, dan beoordelen wij eerlijk en zorgvuldig wat mogelijk is.",
+      en: "Do you have a specific cleaning request? Send clear photos via WhatsApp and we will assess the possibilities honestly and carefully.",
     },
   },
 ];

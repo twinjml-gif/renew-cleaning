@@ -1067,3 +1067,285 @@ body {
     }
   }
 }
+
+/* Final polish pass: balance without changing the visual identity */
+.nav-shell {
+  max-width: 1280px;
+  padding-bottom: 0.72rem;
+  padding-top: 0.72rem;
+}
+
+.desktop-nav {
+  gap: 0.08rem;
+}
+
+.nav-link {
+  font-size: 0.84rem;
+  padding: 0.58rem 0.55rem;
+}
+
+.page-hero {
+  gap: clamp(1.6rem, 4vw, 3.4rem);
+  min-height: min(720px, calc(100vh - 76px));
+  padding-bottom: clamp(2.6rem, 5vw, 4.4rem);
+  padding-top: clamp(3.4rem, 6vw, 5rem);
+}
+
+.page-hero.compact {
+  min-height: 0;
+  padding-bottom: clamp(2.2rem, 4vw, 3.4rem);
+  padding-top: clamp(2.8rem, 5vw, 4.2rem);
+}
+
+.page-hero-content {
+  max-width: 760px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.35rem, 6.2vw, 4.95rem);
+  line-height: 1.08;
+  max-width: 860px;
+}
+
+.page-hero.compact h1 {
+  font-size: clamp(2.15rem, 4.7vw, 3.8rem);
+  max-width: 780px;
+}
+
+.lead {
+  font-size: clamp(1rem, 1.8vw, 1.22rem);
+  line-height: 1.68;
+  margin-top: 1.05rem;
+  max-width: 720px;
+}
+
+.hero-extra {
+  gap: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.section {
+  max-width: 1200px;
+  padding-bottom: clamp(2.8rem, 5vw, 4.4rem);
+  padding-top: clamp(2.8rem, 5vw, 4.4rem);
+}
+
+.section-header {
+  margin-bottom: 1.45rem;
+  max-width: 720px;
+}
+
+.section-header h2,
+.split-section h2,
+.cta-section h2,
+.price-note h2,
+.contact-panel h2 {
+  font-size: clamp(1.9rem, 3.3vw, 3rem);
+  line-height: 1.12;
+}
+
+.section-header p,
+.split-section p,
+.cta-section p,
+.price-note p,
+.contact-panel p {
+  line-height: 1.72;
+}
+
+.card-grid,
+.price-grid,
+.results-grid {
+  align-items: stretch;
+  gap: 1.05rem;
+}
+
+.service-card,
+.price-card,
+.result-card {
+  height: 100%;
+}
+
+.service-card,
+.result-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body,
+.result-card div,
+.contact-panel {
+  padding: 1.35rem;
+}
+
+.card-body,
+.result-card div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.service-card h3,
+.price-card h3,
+.result-card h3,
+.result-mini-grid h3 {
+  line-height: 1.22;
+}
+
+.service-card p,
+.price-card p,
+.result-card p {
+  line-height: 1.68;
+}
+
+.service-card p,
+.result-card p {
+  margin-bottom: auto;
+}
+
+.service-icon,
+.price-check {
+  height: 42px;
+  width: 42px;
+}
+
+.price-grid {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.price-card {
+  min-height: 245px;
+  padding-bottom: 4.25rem;
+}
+
+.price-card h3 {
+  font-size: 1.85rem;
+  line-height: 1.12;
+}
+
+.results-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.faq-list {
+  gap: 0.75rem;
+  max-width: 940px;
+}
+
+.faq-item button {
+  line-height: 1.45;
+  padding: 1rem 1.15rem;
+}
+
+.faq-item p {
+  line-height: 1.72;
+  padding: 0 1.15rem 1rem;
+}
+
+.cta-section,
+.price-note {
+  gap: 1.25rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 2.35rem;
+}
+
+.footer-grid {
+  align-items: start;
+  gap: clamp(1.4rem, 4vw, 2.4rem);
+  max-width: 1200px;
+}
+
+.footer-links,
+.footer-contact {
+  gap: 0.58rem;
+}
+
+.footer-bottom {
+  margin-top: 1.6rem;
+  padding-top: 1rem;
+}
+
+@media (min-width: 1120px) {
+  .page-hero {
+    grid-template-columns: minmax(0, 0.98fr) minmax(340px, 0.72fr);
+  }
+
+  .page-hero.compact {
+    grid-template-columns: minmax(0, 0.92fr) minmax(300px, 0.58fr);
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .page-hero,
+  .page-hero.compact {
+    padding-bottom: 2.4rem;
+    padding-top: 2.6rem;
+  }
+
+  .page-hero h1,
+  .page-hero.compact h1 {
+    font-size: clamp(2.05rem, 10vw, 3.2rem);
+    line-height: 1.1;
+  }
+
+  .lead {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .section {
+    padding-bottom: 2.55rem;
+    padding-top: 2.55rem;
+  }
+
+  .section-header h2,
+  .split-section h2,
+  .cta-section h2,
+  .price-note h2,
+  .contact-panel h2 {
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+  }
+
+  .card-body,
+  .price-card,
+  .result-card div,
+  .contact-panel {
+    padding: 1.15rem;
+  }
+
+  .price-card {
+    min-height: 0;
+    padding-bottom: 3.8rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-shell {
+    gap: 0.65rem;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .brand-logo {
+    max-width: 178px;
+    width: 178px;
+  }
+
+  .hero-highlights span {
+    width: 100%;
+  }
+
+  .footer-logo {
+    max-width: 190px;
+    width: 190px;
+  }
+}
