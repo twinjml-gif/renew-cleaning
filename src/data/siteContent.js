@@ -17,16 +17,21 @@ export const siteContent = {
         "Voor een exacte prijs kunt u foto's sturen via WhatsApp. Op basis daarvan ontvangt u een passende prijs.",
     },
     home: {
-      eyebrow: "Premium reiniging op locatie",
-      title: "RenewCleaning - geef uw interieur een tweede leven.",
-      subtitle: "Luxe reiniging aan huis voor meubels, matrassen, kinderwagens en meer.",
+      eyebrow: "Professionele reiniging op locatie",
+      title: "Professionele dieptereiniging aan huis",
+      subtitle:
+        "Geef uw bank, matras, tapijt, kinderwagen of andere textiele meubels een zichtbaar frissere uitstraling met professionele reiniging op locatie.",
+      priceLabel: "Bank reinigen",
+      priceNote: "Voor een exacte prijs stuurt u eenvoudig foto's via WhatsApp.",
+      primaryCta: "Stuur foto's via WhatsApp",
+      secondaryCta: "Bekijk alle prijzen",
       intro:
         "RenewCleaning reinigt meubels, matrassen, tapijt, kinderwagens, bootinterieurs en zakelijke ruimtes met een rustige, zorgvuldige werkwijze. U stuurt foto's via WhatsApp, wij beoordelen de situatie en geven een heldere prijs.",
       heroImageAlt: "Luxe interieurreiniging door RenewCleaning",
       highlights: [
-        "WhatsApp als snelste prijsaanvraag",
-        "Zorgvuldige reiniging aan huis",
-        "Ook buiten Leiden mogelijk",
+        "Professionele apparatuur",
+        "Reiniging aan huis",
+        "Transparante vanaf-prijzen",
       ],
       qualityTitle: "Verzorgd, discreet en professioneel",
       qualityText:
@@ -134,16 +139,21 @@ export const siteContent = {
         "For an exact price, you can send photos via WhatsApp. Based on those photos, you will receive a suitable price.",
     },
     home: {
-      eyebrow: "Premium on-location cleaning",
-      title: "RenewCleaning - give your interior a second life.",
-      subtitle: "Luxury at-home cleaning for furniture, mattresses, strollers and more.",
+      eyebrow: "Professional cleaning on location",
+      title: "Professional deep cleaning at your home",
+      subtitle:
+        "Give your sofa, mattress, carpet, stroller or other upholstered furniture a visibly fresher appearance with professional on-location cleaning.",
+      priceLabel: "Sofa cleaning",
+      priceNote: "For an exact price, simply send your photos via WhatsApp.",
+      primaryCta: "Send photos via WhatsApp",
+      secondaryCta: "View all prices",
       intro:
         "RenewCleaning cleans furniture, mattresses, carpets, strollers, boat interiors and business spaces with a calm, careful process. Send photos via WhatsApp, and we will assess the situation and provide a clear price.",
       heroImageAlt: "Luxury interior cleaning by RenewCleaning",
       highlights: [
-        "WhatsApp is the fastest way to request a price",
-        "Careful cleaning at your location",
-        "Also available outside Leiden",
+        "Professional equipment",
+        "Cleaning at your home",
+        "Transparent starting prices",
       ],
       qualityTitle: "Refined, discreet and professional",
       qualityText:

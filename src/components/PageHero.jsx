@@ -1,6 +1,15 @@
 import WhatsAppButton from "./WhatsAppButton.jsx";
 
-function PageHero({ eyebrow, title, subtitle, image, imageAlt, children, compact = false }) {
+function PageHero({
+  eyebrow,
+  title,
+  subtitle,
+  image,
+  imageAlt,
+  children,
+  compact = false,
+  showDefaultCta = true,
+}) {
   return (
     <section className={compact ? "page-hero compact" : "page-hero"}>
       <div className="page-hero-content">
@@ -8,7 +17,7 @@ function PageHero({ eyebrow, title, subtitle, image, imageAlt, children, compact
         <h1>{title}</h1>
         <p className="lead">{subtitle}</p>
         {children ? <div className="hero-extra">{children}</div> : null}
-        <WhatsAppButton />
+        {showDefaultCta ? <WhatsAppButton /> : null}
       </div>
       {image ? (
         <div className="page-hero-media">

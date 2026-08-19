@@ -3,7 +3,7 @@ import { company } from "../data/company.js";
 import WhatsAppButton from "./WhatsAppButton.jsx";
 import { useLanguage } from "./LanguageProvider.jsx";
 
-function CTASection({ title, text }) {
+function CTASection({ title, text, whatsAppLabel }) {
   const { t } = useLanguage();
 
   return (
@@ -14,7 +14,7 @@ function CTASection({ title, text }) {
         <p>{text}</p>
       </div>
       <div className="cta-actions">
-        <WhatsAppButton />
+        <WhatsAppButton label={whatsAppLabel} />
         <a className="btn btn-secondary" href={`mailto:${company.email}`}>
           <Mail aria-hidden="true" size={20} />
           <span>{t.common.email}</span>
