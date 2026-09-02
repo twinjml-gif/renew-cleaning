@@ -131,7 +131,7 @@ function Home() {
     { id: "banken", price: prices.find((item) => item.id === "banken")?.price[language] },
     { id: "matras", price: prices.find((item) => item.id === "matras")?.price[language] },
     { id: "tapijt", price: prices.find((item) => item.id === "tapijt")?.price[language] },
-    { id: "stoelen", price: prices.find((item) => item.id === "overig")?.price[language] },
+    { id: "stoelen", price: prices.find((item) => item.id === "stoelen")?.price[language] },
   ];
   const homeFaqs = faqs.filter((item) => ["werkwijze", "droogtijd", "vlekken", "voorbereiding"].includes(item.id));
 

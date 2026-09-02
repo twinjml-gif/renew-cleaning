@@ -36,12 +36,21 @@ export const prices = [
     },
   },
   {
+    id: "stoelen",
+    service: { nl: "Eetkamerstoelen", en: "Dining chairs" },
+    price: { nl: "Vanaf €5,50 per stoel", en: "From €5.50 per chair" },
+    detail: {
+      nl: "Voor gestoffeerde eetkamerstoelen. De vanaf-prijs geldt per eetkamerstoel.",
+      en: "For upholstered dining chairs. The starting price applies to each dining chair.",
+    },
+  },
+  {
     id: "overig",
     service: { nl: "Overige diensten", en: "Other services" },
     price: { nl: "Prijs op aanvraag", en: "Price on request" },
     detail: {
-      nl: "Voor stoelen, bootinterieur, zakelijke ruimtes en speciale reinigingsaanvragen.",
-      en: "For chairs, boat interiors, business spaces and special cleaning requests.",
+      nl: "Voor andere textiele meubels, zakelijke ruimtes en speciale reinigingsaanvragen.",
+      en: "For other textile furniture, business spaces and special cleaning requests.",
     },
   },
 ];
