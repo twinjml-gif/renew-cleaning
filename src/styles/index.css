@@ -2125,8 +2125,8 @@ body {
 .results-pair-caption { padding: 1rem 1.1rem 1.15rem; }
 .results-pair-caption h3 { color: var(--results-ink); font-size: 1.12rem; }
 .results-pair-caption p { color: var(--results-muted); font-size: 0.94rem; line-height: 1.6; margin-top: 0.4rem; }
-.results-pair-featured .results-pair-images { height: clamp(270px, 25vw, 350px); min-height: 0; }
-.results-pair-featured img { aspect-ratio: auto; }
+.results-pair-featured .results-pair-images { height: clamp(320px, 29vw, 420px); min-height: 0; }
+.results-pair-featured img { aspect-ratio: auto; object-position: center 65%; }
 .results-banks-section { background: #171a18; color: #f7f5f0; padding-bottom: clamp(3.7rem, 7vw, 6rem); padding-top: clamp(3.7rem, 7vw, 6rem); }
 .results-heading-dark h2 { color: #fffdf8; }
 .results-heading-dark > p:not(.results-kicker) { color: #c9ccc6; }
