@@ -1,38 +1,46 @@
 export const results = [
   {
-    id: "bank",
-    image: "/images/resultaat-bank-placeholder.jpg",
+    id: "bank-1",
+    category: "bank",
+    before: "/images/bank1 voor.jpg",
+    after: "/images/bank1 after.jpg",
     title: { nl: "Bankreiniging", en: "Sofa cleaning" },
-    description: {
-      nl: "Een verzorgde indruk van bankreiniging, gericht op frisheid, uitstraling en een net resultaat in de woonruimte.",
-      en: "A refined impression of sofa cleaning, focused on freshness, appearance and a neat result in the living space.",
+    caption: {
+      nl: "Voor en na professionele dieptereiniging.",
+      en: "Before and after professional deep cleaning.",
     },
   },
   {
-    id: "tapijt",
-    image: "/images/resultaat-tapijt-placeholder.jpg",
-    title: { nl: "Tapijtreiniging", en: "Carpet cleaning" },
-    description: {
-      nl: "Een portfolio-impressie voor tapijt en vloerkleden, met aandacht voor structuur, materiaal en verzorgde afwerking.",
-      en: "A portfolio impression for carpets and rugs, with attention to texture, material and a refined finish.",
+    id: "bank-2",
+    category: "bank",
+    before: "/images/bank2 voor.jpg",
+    after: "/images/bank2 after.jpg",
+    title: { nl: "Bankreiniging", en: "Sofa cleaning" },
+    caption: {
+      nl: "Voor en na professionele dieptereiniging.",
+      en: "Before and after professional deep cleaning.",
+    },
+  },
+  {
+    id: "bank-3",
+    category: "bank",
+    before: "/images/bank3 voor.jpg",
+    after: "/images/bank3 after.jpg",
+    title: { nl: "Bankreiniging", en: "Sofa cleaning" },
+    caption: {
+      nl: "Voor en na professionele dieptereiniging.",
+      en: "Before and after professional deep cleaning.",
     },
   },
   {
     id: "matras",
-    image: "/images/resultaat-matras-placeholder.jpg",
-    title: { nl: "Matrasreiniging", en: "Mattress cleaning" },
-    description: {
-      nl: "Een nette indruk van matrasreiniging voor woningen, logeerkamers en verhuuraccommodaties.",
-      en: "A refined impression of mattress cleaning for homes, guest rooms and rental accommodation.",
-    },
-  },
-  {
-    id: "apparatuur",
-    image: "/images/apparatuur-placeholder.jpg",
-    title: { nl: "Professionele apparatuur", en: "Professional equipment" },
-    description: {
-      nl: "Binnenkort worden hier echte resultaten toegevoegd. Tot die tijd geeft deze pagina een professionele indruk van werkwijze en afwerking.",
-      en: "Real results will be added here soon. Until then, this page gives a professional impression of the process and finish.",
+    category: "matras",
+    before: "/images/matras before.jpg",
+    after: "/images/matras after.jpg",
+    title: { nl: "Matras reinigen", en: "Mattress cleaning" },
+    caption: {
+      nl: "Voor en na zorgvuldige textielreiniging.",
+      en: "Before and after careful textile cleaning.",
     },
   },
 ];
