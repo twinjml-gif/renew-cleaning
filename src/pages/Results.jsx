@@ -75,7 +75,7 @@ const pageContent = {
 
 function ResultPair({ item, beforeLabel, afterLabel, featured = false }) {
   return (
-    <article className={`results-pair${featured ? " results-pair-featured" : ""}`}>
+    <article className={`results-pair results-pair-${item.id}${featured ? " results-pair-featured" : ""}`}>
       <div className="results-pair-images">
         <figure>
           <img src={item.before} alt={`${beforeLabel}: ${item.title}`} />
