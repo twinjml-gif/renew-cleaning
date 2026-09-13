@@ -2286,3 +2286,46 @@ body {
 .about-final-cta .about-kicker { color: #d8ba87; }
 @media (min-width: 900px) { .about-hero-grid { grid-template-columns: minmax(0, 1fr) minmax(390px, 0.8fr); } }
 @media (max-width: 720px) { .about-shell { padding-left: 1rem; padding-right: 1rem; } .about-hero-grid { gap: 1.35rem; padding-bottom: 2.2rem; padding-top: 2.35rem; } .about-hero h1 { font-size: clamp(2.1rem, 9vw, 2.85rem); } .about-hero-pair { height: 215px; } .about-actions { gap: 0.6rem; margin-top: 1.15rem; } .about-actions .btn { width: 100%; } .about-trust-grid, .about-story-grid, .about-process, .about-values-grid, .about-equipment-grid, .about-proof-grid, .about-final-grid { grid-template-columns: 1fr; } .about-trust-grid { gap: 0.1rem; padding-bottom: 0.3rem; padding-top: 0.3rem; } .about-trust span { justify-content: flex-start; min-height: 38px; } .about-story-section, .about-process-section, .about-values-section, .about-equipment-section, .about-proof-section { padding-bottom: 3.7rem; padding-top: 3.7rem; } .about-process { gap: 0.9rem; } .about-values-grid article { min-height: 0; } .about-equipment-grid figure { height: 230px; } .about-proof-grid { gap: 1.4rem; } .about-final-cta { padding-bottom: 3.7rem; padding-top: 3.7rem; } }
+
+/* FAQ refresh: intentionally scoped to /faq. */
+.renew-faq { --faq-ink: #222522; --faq-muted: #686a65; --faq-paper: #f7f5f0; --faq-soft: #f0ede6; --faq-accent: #b8945c; background: var(--faq-paper); color: var(--faq-ink); }
+.faq-shell { margin: 0 auto; max-width: 1180px; padding-left: 1.25rem; padding-right: 1.25rem; }
+.faq-kicker { color: #8a6839; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.11em; margin-bottom: 0.7rem; text-transform: uppercase; }
+.faq-refresh-hero { background: linear-gradient(140deg, #fbfaf7 0%, #f0ede6 100%); padding-bottom: clamp(2.6rem, 5vw, 4.3rem); padding-top: clamp(2.7rem, 5vw, 4.4rem); }
+.faq-refresh-hero .faq-shell { max-width: 900px; }
+.faq-refresh-hero h1, .renew-faq h2 { color: var(--faq-ink); font-family: "Playfair Display", Georgia, serif; font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; }
+.faq-refresh-hero h1 { font-size: clamp(2.4rem, 4.35vw, 4.1rem); max-width: 760px; }
+.faq-lead { color: #4c4e49; font-size: clamp(1rem, 1.6vw, 1.17rem); line-height: 1.65; margin-top: 1.1rem; max-width: 700px; }
+.faq-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.35rem; }
+.renew-faq .btn { align-items: center; border-color: transparent; border-radius: 0.45rem; box-shadow: none; display: inline-flex; gap: 0.45rem; justify-content: center; min-height: 50px; }
+.renew-faq .btn-primary { background: #1f2421; color: #fffdf8; }
+.renew-faq .btn-primary:hover { background: #363a36; box-shadow: none; }
+.renew-faq .btn-secondary { background: transparent; border: 1px solid #b8b7b0; color: #2c302d; }
+.faq-trust { background: #fff; border-bottom: 1px solid #e3e0d8; border-top: 1px solid #e3e0d8; }
+.faq-trust-grid { display: grid; gap: 0.75rem; grid-template-columns: repeat(3, minmax(0, 1fr)); padding-bottom: 0.95rem; padding-top: 0.95rem; }
+.faq-trust span { align-items: center; color: #363936; display: flex; font-size: 0.94rem; font-weight: 700; gap: 0.65rem; justify-content: center; min-height: 42px; }
+.faq-trust svg { color: var(--faq-accent); flex: 0 0 auto; }
+.faq-main-section { background: var(--faq-paper); padding-bottom: clamp(3.7rem, 7vw, 6rem); padding-top: clamp(3.7rem, 7vw, 6rem); }
+.faq-content-shell { max-width: 900px; }
+.faq-heading { margin-bottom: 1.75rem; }
+.faq-heading h2, .faq-final-cta h2 { font-size: clamp(2rem, 4vw, 3.1rem); }
+.faq-refresh-list { border-bottom: 1px solid #d9d6ce; border-top: 1px solid #d9d6ce; }
+.faq-refresh-item { border-bottom: 1px solid #d9d6ce; }
+.faq-refresh-item:last-child { border-bottom: 0; }
+.faq-refresh-item h3 { margin: 0; }
+.faq-refresh-item button { align-items: center; background: transparent; border: 0; color: #30332f; cursor: pointer; display: flex; font: inherit; font-size: 1.07rem; font-weight: 800; gap: 1rem; justify-content: space-between; line-height: 1.45; padding: 1.25rem 0.2rem; text-align: left; width: 100%; }
+.faq-refresh-item button:hover { color: #79592c; }
+.faq-refresh-item button:focus-visible { border-radius: 0.25rem; outline: 2px solid #b8945c; outline-offset: -2px; }
+.faq-refresh-item button svg { color: #9a7745; flex: 0 0 auto; transition: transform 180ms ease; }
+.faq-refresh-item.is-open button svg { transform: rotate(180deg); }
+.faq-refresh-item > div { max-width: 770px; }
+.faq-refresh-item p { color: var(--faq-muted); line-height: 1.75; padding: 0 2.25rem 1.3rem 0.2rem; }
+.faq-price-list { display: grid; gap: 0.28rem; list-style: none; margin: 0; padding: 0 0.2rem 0.8rem; }
+.faq-price-list li { align-items: baseline; color: #454843; display: flex; gap: 0.65rem; justify-content: space-between; line-height: 1.55; }
+.faq-price-list strong { color: #79592c; font-size: 0.95rem; white-space: nowrap; }
+.faq-final-cta { background: #171a18; color: #fff; padding-bottom: 5rem; padding-top: 5rem; }
+.faq-final-grid { align-items: center; display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr) auto; }
+.faq-final-cta h2 { color: #fffdf8; max-width: 720px; }
+.faq-final-cta p:not(.faq-kicker) { color: #c9ccc6; }
+.faq-final-cta .faq-kicker { color: #d8ba87; }
+@media (max-width: 720px) { .faq-shell { padding-left: 1rem; padding-right: 1rem; } .faq-refresh-hero { padding-bottom: 2.2rem; padding-top: 2.35rem; } .faq-refresh-hero h1 { font-size: clamp(2.15rem, 9.4vw, 2.95rem); } .faq-actions { gap: 0.6rem; margin-top: 1.15rem; } .faq-actions .btn { width: 100%; } .faq-trust-grid, .faq-final-grid { grid-template-columns: 1fr; } .faq-trust-grid { gap: 0.1rem; padding-bottom: 0.3rem; padding-top: 0.3rem; } .faq-trust span { justify-content: flex-start; min-height: 38px; } .faq-main-section { padding-bottom: 3.7rem; padding-top: 3.7rem; } .faq-refresh-item button { font-size: 1rem; padding-bottom: 1.05rem; padding-top: 1.05rem; } .faq-refresh-item p { padding-right: 0.2rem; } .faq-final-cta { padding-bottom: 3.7rem; padding-top: 3.7rem; } }
