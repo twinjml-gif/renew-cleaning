@@ -1,32 +1,30 @@
 export const socials = [
   {
-    id: "snapchat",
-    label: "Snapchat",
-    url: "#",
-    icon: "camera",
-  },
-  {
     id: "instagram",
     label: "Instagram",
-    url: "#",
+    handle: "@cleaning.renew",
+    url: "https://www.instagram.com/cleaning.renew/",
     icon: "instagram",
   },
   {
     id: "tiktok",
     label: "TikTok",
-    url: "#",
-    icon: "music",
+    handle: "@renewcleaning.nl",
+    url: "https://www.tiktok.com/@renewcleaning.nl",
+    icon: "tiktok",
+  },
+  {
+    id: "snapchat",
+    label: "Snapchat",
+    handle: "renewcleaning",
+    url: null,
+    icon: "snapchat",
   },
   {
     id: "facebook",
     label: "Facebook",
-    url: "#",
+    handle: "ReNew Cleaning",
+    url: "https://www.facebook.com/share/1ELqUUkDpJ/?mibextid=wwXIfr",
     icon: "facebook",
-  },
-  {
-    id: "whatsapp-business",
-    label: "WhatsApp Business",
-    url: "https://wa.me/31640855350",
-    icon: "message",
   },
 ];

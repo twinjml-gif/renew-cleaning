@@ -2329,3 +2329,50 @@ body {
 .faq-final-cta p:not(.faq-kicker) { color: #c9ccc6; }
 .faq-final-cta .faq-kicker { color: #d8ba87; }
 @media (max-width: 720px) { .faq-shell { padding-left: 1rem; padding-right: 1rem; } .faq-refresh-hero { padding-bottom: 2.2rem; padding-top: 2.35rem; } .faq-refresh-hero h1 { font-size: clamp(2.15rem, 9.4vw, 2.95rem); } .faq-actions { gap: 0.6rem; margin-top: 1.15rem; } .faq-actions .btn { width: 100%; } .faq-trust-grid, .faq-final-grid { grid-template-columns: 1fr; } .faq-trust-grid { gap: 0.1rem; padding-bottom: 0.3rem; padding-top: 0.3rem; } .faq-trust span { justify-content: flex-start; min-height: 38px; } .faq-main-section { padding-bottom: 3.7rem; padding-top: 3.7rem; } .faq-refresh-item button { font-size: 1rem; padding-bottom: 1.05rem; padding-top: 1.05rem; } .faq-refresh-item p { padding-right: 0.2rem; } .faq-final-cta { padding-bottom: 3.7rem; padding-top: 3.7rem; } }
+
+/* Contact refresh: intentionally scoped to /contact. */
+.renew-contact { --contact-ink: #222522; --contact-muted: #686a65; --contact-paper: #f7f5f0; --contact-soft: #f0ede6; --contact-accent: #b8945c; background: var(--contact-paper); color: var(--contact-ink); }
+.contact-shell { margin: 0 auto; max-width: 1180px; padding-left: 1.25rem; padding-right: 1.25rem; }
+.contact-kicker { color: #8a6839; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.11em; margin-bottom: 0.7rem; text-transform: uppercase; }
+.contact-refresh-hero { background: linear-gradient(140deg, #fbfaf7 0%, #f0ede6 100%); }
+.contact-hero-grid { align-items: center; display: grid; gap: clamp(1.8rem, 5vw, 4rem); padding-bottom: clamp(2.5rem, 5vw, 4.2rem); padding-top: clamp(2.8rem, 5vw, 4.5rem); }
+.contact-refresh-hero h1, .renew-contact h2 { color: var(--contact-ink); font-family: "Playfair Display", Georgia, serif; font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; }
+.contact-refresh-hero h1 { font-size: clamp(2.4rem, 4.35vw, 4.1rem); max-width: 650px; }
+.contact-lead { color: #4c4e49; font-size: clamp(1rem, 1.6vw, 1.17rem); line-height: 1.65; margin-top: 1.1rem; max-width: 630px; }
+.contact-refresh-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.35rem; }
+.renew-contact .btn { align-items: center; border-color: transparent; border-radius: 0.45rem; box-shadow: none; display: inline-flex; gap: 0.45rem; justify-content: center; min-height: 50px; }
+.renew-contact .btn-primary { background: #1f2421; color: #fffdf8; }
+.renew-contact .btn-primary:hover { background: #363a36; box-shadow: none; }
+.renew-contact .btn-secondary { background: transparent; border: 1px solid #b8b7b0; color: #2c302d; }
+.contact-quick-panel { background: #fff; border: 1px solid #dedbd3; border-radius: 0.85rem; box-shadow: 0 18px 40px rgba(37, 39, 35, 0.09); padding: clamp(1.3rem, 3vw, 2rem); }
+.contact-quick-panel > p:not(.contact-kicker) { color: var(--contact-muted); line-height: 1.65; }
+.contact-methods { display: grid; gap: 0.65rem; margin-top: 1.25rem; }
+.contact-method { align-items: center; border: 1px solid #dedbd3; border-radius: 0.6rem; color: #353834; display: flex; gap: 0.75rem; min-height: 68px; padding: 0.8rem; }
+a.contact-method:hover { border-color: #b8945c; }
+.contact-method svg { color: #9a7745; flex: 0 0 auto; }
+.contact-method span, .contact-social-grid span { display: grid; gap: 0.18rem; min-width: 0; }
+.contact-method strong, .contact-social-grid strong { font-size: 0.92rem; }
+.contact-method small, .contact-social-grid small { color: var(--contact-muted); font-size: 0.83rem; overflow-wrap: anywhere; }
+.contact-method.is-primary { background: #1f2421; border-color: #1f2421; color: #fffdf8; }
+.contact-method.is-primary svg { color: #e7c889; }
+.contact-method.is-primary small { color: #d6d8d2; }
+.contact-flow-section, .contact-social-section { padding-bottom: clamp(3.7rem, 7vw, 5.6rem); padding-top: clamp(3.7rem, 7vw, 5.6rem); }
+.contact-flow-section { background: var(--contact-soft); }
+.contact-heading { margin-bottom: 1.8rem; max-width: 700px; }
+.contact-heading h2, .contact-final-cta h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+.contact-heading > p:not(.contact-kicker), .contact-final-cta p:not(.contact-kicker) { color: var(--contact-muted); line-height: 1.7; margin-top: 0.85rem; }
+.contact-flow { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
+.contact-flow li { border-top: 1px solid #c8c5bc; color: #454843; line-height: 1.6; padding-top: 1rem; }
+.contact-flow span { color: var(--contact-accent); display: block; font-family: "Playfair Display", Georgia, serif; font-size: 1.8rem; margin-bottom: 0.5rem; }
+.contact-social-section { background: #fff; }
+.contact-social-grid { display: grid; gap: 1rem; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.contact-social-grid > a, .contact-social-grid > div { align-items: center; background: var(--contact-paper); border: 1px solid #dedbd3; border-radius: 0.75rem; color: #343733; display: flex; gap: 0.75rem; min-height: 96px; padding: 1rem; }
+.contact-social-grid > a:hover { border-color: #b8945c; }
+.contact-social-grid svg { color: #9a7745; flex: 0 0 auto; }
+.contact-final-cta { background: #171a18; color: #fff; padding-bottom: 5rem; padding-top: 5rem; }
+.contact-final-grid { align-items: center; display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr) auto; }
+.contact-final-cta h2 { color: #fffdf8; max-width: 720px; }
+.contact-final-cta p:not(.contact-kicker) { color: #c9ccc6; max-width: 680px; }
+.contact-final-cta .contact-kicker { color: #d8ba87; }
+@media (min-width: 900px) { .contact-hero-grid { grid-template-columns: minmax(0, 1fr) minmax(330px, 0.72fr); } }
+@media (max-width: 720px) { .contact-shell { padding-left: 1rem; padding-right: 1rem; } .contact-hero-grid { gap: 1.35rem; padding-bottom: 2.2rem; padding-top: 2.35rem; } .contact-refresh-hero h1 { font-size: clamp(2.15rem, 9.3vw, 2.9rem); } .contact-refresh-actions { gap: 0.6rem; margin-top: 1.15rem; } .contact-refresh-actions .btn { width: 100%; } .contact-flow, .contact-social-grid, .contact-final-grid { grid-template-columns: 1fr; } .contact-flow-section, .contact-social-section { padding-bottom: 3.7rem; padding-top: 3.7rem; } .contact-social-grid { gap: 0.7rem; } .contact-social-grid > a, .contact-social-grid > div { min-height: 74px; } .contact-final-cta { padding-bottom: 3.7rem; padding-top: 3.7rem; } }
