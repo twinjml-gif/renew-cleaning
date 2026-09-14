@@ -44,7 +44,7 @@ function Footer() {
             </a>
             <span>
               <MapPin aria-hidden="true" size={18} />
-              {company.location}
+              {language === "nl" ? `Vestigingsplaats: ${company.location}` : `Business location: ${company.location}`}
             </span>
           </div>
         </div>

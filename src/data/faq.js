@@ -39,8 +39,8 @@ export const faqs = [
       en: "How long does it take for furniture to dry?",
     },
     answer: {
-      nl: "De droogtijd hangt af van stof, ventilatie en temperatuur. In veel situaties kan bekleding dezelfde dag verder drogen met goede ventilatie.",
-      en: "Drying time depends on fabric, ventilation and temperature. In many situations, upholstery can continue drying the same day with good ventilation.",
+      nl: "De droogtijd verschilt per materiaal, meubel en situatie. Tijdens of na de reiniging kunnen we toelichten wat voor uw meubel van toepassing is.",
+      en: "Drying time varies by material, furniture and situation. During or after the cleaning, we can explain what applies to your furniture.",
     },
   },
   {

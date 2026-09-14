@@ -3,6 +3,7 @@ import FloatingWhatsApp from "./components/FloatingWhatsApp.jsx";
 import Footer from "./components/Footer.jsx";
 import LanguageProvider from "./components/LanguageProvider.jsx";
 import Navbar from "./components/Navbar.jsx";
+import RouteMetadata from "./components/RouteMetadata.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import About from "./pages/About.jsx";
 import Business from "./pages/Business.jsx";
@@ -16,6 +17,7 @@ import Services from "./pages/Services.jsx";
 function App() {
   return (
     <LanguageProvider>
+      <RouteMetadata />
       <ScrollToTop />
       <div className="min-h-screen bg-ink text-ivory">
         <Navbar />

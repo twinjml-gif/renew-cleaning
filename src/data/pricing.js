@@ -45,12 +45,21 @@ export const prices = [
     },
   },
   {
-    id: "overig",
-    service: { nl: "Overige diensten", en: "Other services" },
-    price: { nl: "Prijs op aanvraag", en: "Price on request" },
+    id: "other-textile",
+    service: { nl: "Andere textiele meubels", en: "Other textile furniture" },
+    price: { nl: "Exacte prijs via WhatsApp", en: "Exact price via WhatsApp" },
     detail: {
-      nl: "Voor andere textiele meubels, zakelijke ruimtes en speciale reinigingsaanvragen.",
-      en: "For other textile furniture, business spaces and special cleaning requests.",
+      nl: "Voor fauteuils, poefs, eetkamerbanken en andere gestoffeerde of textiele meubels.",
+      en: "For armchairs, pouffes, dining benches and other upholstered or textile furniture.",
+    },
+  },
+  {
+    id: "business-custom",
+    service: { nl: "Zakelijk / maatwerk", en: "Business / tailored work" },
+    price: { nl: "Offerte op maat", en: "Tailored quote" },
+    detail: {
+      nl: "Voor zakelijke reiniging en maatwerk bespreken we eerst de situatie, omvang en planning.",
+      en: "For business cleaning and tailored work, we first discuss the situation, scale and planning.",
     },
   },
 ];
