@@ -2,6 +2,7 @@ import { ArrowRight, Building2, Check, MessageCircle, Sparkles } from "lucide-re
 import { Link } from "react-router-dom";
 import CTASection from "../components/CTASection.jsx";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
+import ResponsiveCollage from "../components/ResponsiveCollage.jsx";
 import { prices } from "../data/pricing.js";
 import { useLanguage } from "../components/LanguageProvider.jsx";
 
@@ -88,7 +89,7 @@ function Pricing() {
 
   return (
     <div className="renew-pricing">
-      <section className="pricing-hero"><div className="pricing-shell pricing-hero-grid"><div><p className="pricing-kicker">{copy.eyebrow}</p><h1>{copy.title}</h1><p className="pricing-lead">{copy.intro}</p><div className="pricing-actions"><WhatsAppButton label={copy.primaryCta} /><Link className="btn btn-secondary" to="/diensten">{copy.servicesCta}</Link></div></div><figure className="pricing-hero-image"><img src="/images/collage RENEW.png" alt="Professionele apparatuur en voor-en-na-resultaat van RenewCleaning" /></figure></div></section>
+      <section className="pricing-hero"><div className="pricing-shell pricing-hero-grid"><div><p className="pricing-kicker">{copy.eyebrow}</p><h1>{copy.title}</h1><p className="pricing-lead">{copy.intro}</p><div className="pricing-actions"><WhatsAppButton label={copy.primaryCta} /><Link className="btn btn-secondary" to="/diensten">{copy.servicesCta}</Link></div></div><figure className="pricing-hero-image"><ResponsiveCollage alt="Professionele apparatuur en voor-en-na-resultaat van RenewCleaning" /></figure></div></section>
       <section className="pricing-trust" aria-label="Prijsvoordelen"><div className="pricing-shell pricing-trust-grid">{copy.trust.map((item) => <span key={item}><Check aria-hidden="true" size={18} />{item}</span>)}</div></section>
       <section className="pricing-section"><div className="pricing-shell"><header className="pricing-heading"><p className="pricing-kicker">{copy.pricingEyebrow}</p><h2>{copy.pricingTitle}</h2><p>{copy.pricingText}</p></header><div className="pricing-card-grid">{standardPrices.map((item) => <article className="pricing-card" key={item.id}><Sparkles aria-hidden="true" size={20} /><p className="pricing-service">{item.service[language]}</p><strong>{item.price[language]}</strong><p className="pricing-detail">{item.detail[language]}</p><WhatsAppButton className="pricing-card-cta" label={copy.cardCta} /></article>)}</div></div></section>
       <section className="pricing-factors-section"><div className="pricing-shell pricing-factors-panel"><MessageCircle aria-hidden="true" size={30} /><div><p className="pricing-kicker">{copy.factorsEyebrow}</p><h2>{copy.factorsTitle}</h2><p>{copy.factorsText}</p></div><ul>{copy.factorList.map((item) => <li key={item}><Check aria-hidden="true" size={17} />{item}</li>)}</ul></div></section>

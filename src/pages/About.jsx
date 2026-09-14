@@ -1,6 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
+import ResponsiveCollage from "../components/ResponsiveCollage.jsx";
 import { results } from "../data/results.js";
 import { useLanguage } from "../components/LanguageProvider.jsx";
 
@@ -50,7 +51,7 @@ function About() {
       <section className="about-story-section"><div className="about-shell about-story-grid"><header className="about-heading"><p className="about-kicker">{copy.storyEyebrow}</p><h2>{copy.storyTitle}</h2></header><div className="about-story-copy">{copy.storyText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div></section>
       <section className="about-process-section"><div className="about-shell"><header className="about-heading"><p className="about-kicker">{copy.processEyebrow}</p><h2>{copy.processTitle}</h2></header><ol className="about-process">{copy.steps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}</ol></div></section>
       <section className="about-values-section"><div className="about-shell"><header className="about-heading"><p className="about-kicker">{copy.valuesEyebrow}</p><h2>{copy.valuesTitle}</h2></header><div className="about-values-grid">{copy.values.map(([title, text]) => <article key={title}><Check aria-hidden="true" size={20} /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
-      <section className="about-equipment-section"><div className="about-shell about-equipment-grid"><figure><img src="/images/collage RENEW.png" alt="Professionele reinigingsapparatuur en resultaten van RenewCleaning" /></figure><div><p className="about-kicker">{copy.equipmentEyebrow}</p><h2>{copy.equipmentTitle}</h2><p>{copy.equipmentText}</p></div></div></section>
+      <section className="about-equipment-section"><div className="about-shell about-equipment-grid"><figure><ResponsiveCollage alt="Professionele reinigingsapparatuur en resultaten van RenewCleaning" /></figure><div><p className="about-kicker">{copy.equipmentEyebrow}</p><h2>{copy.equipmentTitle}</h2><p>{copy.equipmentText}</p></div></div></section>
       <section className="about-proof-section"><div className="about-shell about-proof-grid"><header className="about-heading about-heading-dark"><p className="about-kicker">{copy.proofEyebrow}</p><h2>{copy.proofTitle}</h2><p>{copy.proofText}</p><Link className="about-inline-link" to="/resultaten">{copy.proofCta} <ArrowRight aria-hidden="true" size={18} /></Link></header><article className="about-proof-pair"><figure><img src={proofResult.before} alt={`${copy.before}: bankreiniging`} /><figcaption>{copy.before}</figcaption></figure><figure><img src={proofResult.after} alt={`${copy.after}: bankreiniging`} /><figcaption>{copy.after}</figcaption></figure></article></div></section>
       <section className="about-final-cta"><div className="about-shell about-final-grid"><div><p className="about-kicker">{copy.finalEyebrow}</p><h2>{copy.finalTitle}</h2><p>{copy.finalText}</p></div><WhatsAppButton label={copy.primaryCta} /></div></section>
     </div>

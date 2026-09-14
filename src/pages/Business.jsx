@@ -1,6 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
+import ResponsiveCollage from "../components/ResponsiveCollage.jsx";
 import { results } from "../data/results.js";
 import { useLanguage } from "../components/LanguageProvider.jsx";
 
@@ -76,7 +77,7 @@ function Business() {
 
   return (
     <div className="renew-business">
-      <section className="business-hero"><div className="business-shell business-hero-grid"><div><p className="business-kicker">{copy.eyebrow}</p><h1>{copy.title}</h1><p className="business-lead">{copy.intro}</p><div className="business-actions"><WhatsAppButton label={copy.primaryCta} /><Link className="btn btn-secondary" to="/resultaten">{copy.resultsCta}</Link></div></div><figure className="business-hero-image"><img src="/images/collage RENEW.png" alt="Professionele apparatuur en een echt reinigingsresultaat van RenewCleaning" /></figure></div></section>
+      <section className="business-hero"><div className="business-shell business-hero-grid"><div><p className="business-kicker">{copy.eyebrow}</p><h1>{copy.title}</h1><p className="business-lead">{copy.intro}</p><div className="business-actions"><WhatsAppButton label={copy.primaryCta} /><Link className="btn btn-secondary" to="/resultaten">{copy.resultsCta}</Link></div></div><figure className="business-hero-image"><ResponsiveCollage alt="Professionele apparatuur en een echt reinigingsresultaat van RenewCleaning" /></figure></div></section>
       <section className="business-trust" aria-label="Zakelijke voordelen"><div className="business-shell business-trust-grid">{copy.trust.map((item) => <span key={item}><Check aria-hidden="true" size={18} />{item}</span>)}</div></section>
 
       <section className="business-situations-section"><div className="business-shell"><header className="business-heading"><p className="business-kicker">{copy.situationsEyebrow}</p><h2>{copy.situationsTitle}</h2><p>{copy.situationsText}</p></header><div className="business-situations-grid">{copy.situations.map((item) => <article key={item}><Check aria-hidden="true" size={18} /><p>{item}</p></article>)}</div></div></section>
