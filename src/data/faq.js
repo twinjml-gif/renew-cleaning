@@ -1,4 +1,5 @@
 export const faqs = [
+  { id: "prijs", question: { nl: "Wat kost het reinigen van mijn meubel?", en: "What does it cost to clean my furniture?" }, answer: { nl: "De vanaf-prijzen geven richting. Voor een exacte prijs bekijken we eerst duidelijke foto's van uw situatie.", en: "The starting prices provide guidance. For an exact price, we first review clear photos of your situation." } },
   {
     id: "werkwijze",
     question: {
@@ -21,6 +22,7 @@ export const faqs = [
       en: "Send one overview photo, one close-up and clear photos of stains or wear. This helps us provide a faster and more accurate price.",
     },
   },
+  { id: "diensten", question: { nl: "Welke meubels en textiel reinigen jullie?", en: "Which furniture and textiles do you clean?" }, answer: { nl: "RenewCleaning richt zich op banken, matrassen, stoelen, tapijt, kinderwagens en andere textiele meubels. Voor een afwijkend meubel kunt u foto's sturen, dan bekijken we wat passend is.", en: "RenewCleaning focuses on sofas, mattresses, chairs, carpets, strollers and other textile furniture. For an unusual item, send photos and we will see what is suitable." } },
   {
     id: "locatie",
     question: {

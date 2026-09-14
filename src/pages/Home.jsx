@@ -1,206 +1,84 @@
-import {
-  ArrowRight,
-  Building2,
-  Check,
-  CircleDollarSign,
-  Sofa,
-  WashingMachine,
-} from "lucide-react";
+import { ArrowRight, Building2, Camera, Check, Facebook, Instagram, Mail, MessageCircle, Music2, Phone, Sparkles } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import CTASection from "../components/CTASection.jsx";
-import FAQItem from "../components/FAQItem.jsx";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
+import { company } from "../data/company.js";
 import { faqs } from "../data/faq.js";
 import { prices } from "../data/pricing.js";
+import { results } from "../data/results.js";
+import { socials } from "../data/socials.js";
 import { useLanguage } from "../components/LanguageProvider.jsx";
 
-const content = {
+const copy = {
   nl: {
-    eyebrow: "Professionele reiniging op locatie",
-    title: "Professionele dieptereiniging aan huis",
-    subtitle: "Voor banken, stoelen, matrassen, tapijt, kinderwagens en andere textiele meubels.",
-    priceNote: "Voor een exacte prijs stuurt u eenvoudig foto's via WhatsApp.",
-    primaryCta: "Stuur foto's voor uw exacte prijs",
-    pricingCta: "Bekijk alle prijzen",
+    hero: ["Professionele reiniging op locatie", "Professionele dieptereiniging aan huis", "Voor banken, stoelen, matrassen, tapijt, kinderwagens en andere textiele meubels."],
+    priceNote: "Voor een exacte prijs stuurt u eenvoudig foto's via WhatsApp.", primaryCta: "Stuur foto's voor uw exacte prijs", pricesCta: "Bekijk alle prijzen",
     trust: ["Reiniging aan huis", "Professionele apparatuur", "Transparante vanaf-prijzen"],
-    pricesEyebrow: "Heldere vanaf-prijzen",
-    pricesTitle: "Snel inzicht, afgestemd op uw situatie",
-    pricesText: "Voor standaarddiensten ziet u direct een vanaf-prijs. Voor maatwerk bekijken we uw foto's eerst zorgvuldig.",
-    resultsEyebrow: "Echte resultaten",
-    resultsTitle: "Het verschil ziet u direct",
-    resultsText: "Een selectie van echte voor- en naresultaten van RenewCleaning.",
-    servicesEyebrow: "Onze diensten",
-    servicesTitle: "Voor een fris en verzorgd interieur",
-    servicesText: "Van een enkele stoel tot een complete bank: we beoordelen ieder materiaal zorgvuldig.",
-    processEyebrow: "Zo werkt het",
-    processTitle: "Duidelijk van foto tot resultaat",
-    equipmentEyebrow: "Professionele werkwijze",
-    equipmentTitle: "Zorgvuldig reinigen met professionele apparatuur",
-    equipmentText: "We werken op locatie en behandelen ieder object met aandacht voor materiaal, gebruik en bereikbaarheid.",
-    videoEyebrow: "Stoelreiniging",
-    videoTitle: "Bekijk een stoelresultaat",
-    customEyebrow: "Maatwerk",
-    customTitle: "Maatwerk voor trappenhuizen en kleine bedrijven",
-    customText: "Voor deze opdrachten stemmen we de prijs af op de situatie, omvang en bereikbaarheid.",
-    customCta: "Bespreek uw situatie via WhatsApp",
-    faqEyebrow: "Veelgestelde vragen",
-    faqTitle: "Goed om te weten",
-    faqCta: "Bekijk alle vragen",
-    before: "Voor",
-    after: "Na",
-    sofaResult: "Bankreiniging aan huis",
-    mattressResult: "Matrasreiniging",
-    priceLabels: { banken: "Bank reinigen", matras: "Matras reinigen", tapijt: "Tapijt reinigen", stoelen: "Stoelen reinigen" },
-    services: [
-      ["Banken", "Voor stoffen banken, hoekbanken en loungesets."],
-      ["Matrassen", "Voor een frisse en verzorgde slaapomgeving."],
-      ["Tapijt", "Voor tapijt en vloerkleden, afgestemd op materiaal en formaat."],
-      ["Kinderwagens", "Voor bekleding en bereikbare onderdelen van kinderwagens."],
-      ["Stoelen", "Voor eetkamerstoelen, fauteuils en gestoffeerde zitplaatsen."],
-      ["Andere textiele meubels", "Stuur foto's, dan beoordelen we zorgvuldig wat mogelijk is."],
-    ],
-    steps: [
-      ["1", "Stuur foto's via WhatsApp", "Stuur een overzicht en duidelijke foto's van het object."],
-      ["2", "Ontvang uw exacte prijs", "U ontvangt een heldere prijs die past bij uw situatie."],
-      ["3", "Wij reinigen op locatie", "We komen naar u toe en voeren de reiniging zorgvuldig uit."],
-    ],
+    services: ["Onze diensten", "Voor meubels en textiel die aandacht verdienen", "Van een bank of matras tot tapijt en eetkamerstoelen: we bekijken de situatie zorgvuldig.", "Bekijk alle diensten"],
+    serviceCards: [["banken", "Banken", "Voor stoffen banken, hoekbanken en loungesets."], ["matras", "Matrassen", "Voor een frisse en verzorgde slaapomgeving."], ["tapijt", "Tapijt", "Afgestemd op materiaal, formaat en vervuiling."], ["kinderwagen", "Kinderwagens", "Voor bekleding en bereikbare onderdelen."], ["stoelen", "Eetkamerstoelen", "Voor gestoffeerde zitplaatsen en stoelen."], ["other-textile", "Andere textiele meubels", "Stuur foto's, dan bekijken we wat passend is."]],
+    pricing: ["Heldere vanaf-prijzen", "Snel inzicht, afgestemd op uw situatie", "De vanaf-prijs geeft richting. Met duidelijke foto's kunnen we de situatie bekijken en een passende exacte prijs bespreken."],
+    results: ["Echte resultaten", "Het verschil ziet u direct", "Een compacte selectie van echte voor- en naresultaten van RenewCleaning.", "Bekijk alle resultaten", "VOOR", "NA"],
+    process: ["Zo werkt het", "Duidelijk van foto tot resultaat", ["Stuur duidelijke foto's", "Wij bekijken de situatie", "Bespreek uw passende prijs", "Professionele reiniging op locatie", "Resultaat controleren"]],
+    business: ["Zakelijk en maatwerk", "Ook voor een zakelijke of afwijkende aanvraag", "Voor zakelijke reiniging en maatwerk bekijken we eerst de situatie, omvang en planning. Daarna bespreken we een passende offerte.", "Bespreek uw situatie via WhatsApp", "Meer over zakelijke reiniging"],
+    about: ["Over RenewCleaning", "Zorgvuldig, duidelijk en professioneel", "We stemmen de reiniging af op materiaal, gebruik en de situatie. Met professionele apparatuur werken we zorgvuldig op locatie.", "Meer over RenewCleaning", ["Aandacht voor materiaal", "Duidelijke communicatie", "Professionele apparatuur"]],
+    faq: ["Veelgestelde vragen", "Goed om te weten", "Bekijk alle veelgestelde vragen", "Voor andere textiele meubels bespreken we de exacte prijs via WhatsApp."],
+    contact: ["Contact", "Uw reiniging eenvoudig bespreken", "Stuur enkele duidelijke foto's via WhatsApp. Dan kunnen we uw situatie bekijken en een passende prijs bespreken.", "Bekijk meer van ons werk", "Volg RenewCleaning voor beelden van reinigingen, resultaten en nieuw werk."],
+    contactSteps: ["Stuur duidelijke foto's", "Wij bekijken de situatie", "U bespreekt een passende prijs"],
+    whatsappHelp: "Stuur foto's van uw meubel", callHelp: "Bel RenewCleaning", mailHelp: "Stuur een e-mail",
   },
   en: {
-    eyebrow: "Professional cleaning on location",
-    title: "Professional deep cleaning at your home",
-    subtitle: "For sofas, chairs, mattresses, carpets, strollers and other upholstered furniture.",
-    priceNote: "For an exact price, simply send your photos via WhatsApp.",
-    primaryCta: "Send photos for your exact price",
-    pricingCta: "View all prices",
+    hero: ["Professional cleaning on location", "Professional deep cleaning at your home", "For sofas, chairs, mattresses, carpets, strollers and other textile furniture."],
+    priceNote: "For an exact price, simply send your photos via WhatsApp.", primaryCta: "Send photos for your exact price", pricesCta: "View all prices",
     trust: ["Cleaning at your home", "Professional equipment", "Transparent starting prices"],
-    pricesEyebrow: "Clear starting prices",
-    pricesTitle: "Quick insight, tailored to your situation",
-    pricesText: "For standard services you see a starting price immediately. For tailored work, we first assess your photos carefully.",
-    resultsEyebrow: "Real results",
-    resultsTitle: "You can see the difference immediately",
-    resultsText: "A selection of real before-and-after results from RenewCleaning.",
-    servicesEyebrow: "Our services",
-    servicesTitle: "For a fresh, well-kept interior",
-    servicesText: "From a single chair to a complete sofa: every material is assessed carefully.",
-    processEyebrow: "How it works",
-    processTitle: "Clear from photo to result",
-    equipmentEyebrow: "Professional approach",
-    equipmentTitle: "Careful cleaning with professional equipment",
-    equipmentText: "We work on location and treat every item with attention to material, use and accessibility.",
-    videoEyebrow: "Chair cleaning",
-    videoTitle: "View a chair-cleaning result",
-    customEyebrow: "Tailored work",
-    customTitle: "Tailored work for stairwells and small businesses",
-    customText: "For these jobs, we tailor the price to the situation, size and accessibility.",
-    customCta: "Discuss your situation via WhatsApp",
-    faqEyebrow: "Frequently asked questions",
-    faqTitle: "Good to know",
-    faqCta: "View all questions",
-    before: "Before",
-    after: "After",
-    sofaResult: "At-home sofa cleaning",
-    mattressResult: "Mattress cleaning",
-    priceLabels: { banken: "Sofa cleaning", matras: "Mattress cleaning", tapijt: "Carpet cleaning", stoelen: "Chair cleaning" },
-    services: [
-      ["Sofas", "For fabric sofas, corner sofas and lounge sets."],
-      ["Mattresses", "For a fresh and well-kept sleeping environment."],
-      ["Carpets", "For carpets and rugs, tailored to material and size."],
-      ["Strollers", "For upholstery and reachable stroller parts."],
-      ["Chairs", "For dining chairs, armchairs and upholstered seating."],
-      ["Other upholstered furniture", "Send photos and we will carefully assess what is possible."],
-    ],
-    steps: [
-      ["1", "Send photos via WhatsApp", "Send an overview and clear photos of the item."],
-      ["2", "Receive your exact price", "You receive a clear price suited to your situation."],
-      ["3", "We clean on location", "We come to you and carry out the cleaning carefully."],
-    ],
+    services: ["Our services", "For furniture and textiles that deserve attention", "From a sofa or mattress to carpet and dining chairs: we assess every situation carefully.", "View all services"],
+    serviceCards: [["banken", "Sofas", "For fabric sofas, corner sofas and lounge sets."], ["matras", "Mattresses", "For a fresh and well-kept sleeping environment."], ["tapijt", "Carpets", "Tailored to material, size and level of soiling."], ["kinderwagen", "Strollers", "For upholstery and reachable parts."], ["stoelen", "Dining chairs", "For upholstered seating and chairs."], ["other-textile", "Other textile furniture", "Send photos and we will see what suits your situation."]],
+    pricing: ["Clear starting prices", "Quick insight, tailored to your situation", "The starting price gives direction. With clear photos, we can assess the situation and discuss a suitable exact price."],
+    results: ["Real results", "You can see the difference immediately", "A compact selection of real before-and-after results from RenewCleaning.", "View all results", "BEFORE", "AFTER"],
+    process: ["How it works", "Clear from photo to result", ["Send clear photos", "We assess the situation", "Discuss your suitable price", "Professional cleaning on location", "Check the result"]],
+    business: ["Business and tailored work", "Also for a business or unusual request", "For business cleaning and tailored work, we first review the situation, scale and planning. Then we discuss a suitable quote.", "Discuss your situation via WhatsApp", "More about business cleaning"],
+    about: ["About RenewCleaning", "Careful, clear and professional", "We tailor the cleaning to material, use and the situation. With professional equipment, we work carefully on location.", "More about RenewCleaning", ["Attention to material", "Clear communication", "Professional equipment"]],
+    faq: ["Frequently asked questions", "Good to know", "View all frequently asked questions", "For other textile furniture, we discuss the exact price via WhatsApp."],
+    contact: ["Contact", "Discuss your cleaning easily", "Send a few clear photos via WhatsApp. We can then review your situation and discuss a suitable price.", "See more of our work", "Follow RenewCleaning for images of cleaning jobs, results and new work."],
+    contactSteps: ["Send clear photos", "We assess the situation", "Discuss a suitable price"],
+    whatsappHelp: "Send photos of your furniture", callHelp: "Call RenewCleaning", mailHelp: "Send an email",
   },
 };
 
-const resultSets = [
-  { id: "bank-1", before: "/images/bank1 voor.jpg", after: "/images/bank1 after.jpg", type: "sofa" },
-  { id: "bank-2", before: "/images/bank2 voor.jpg", after: "/images/bank2 after.jpg", type: "sofa" },
-  { id: "bank-3", before: "/images/bank3 voor.jpg", after: "/images/bank3 after.jpg", type: "sofa" },
-  { id: "matras", before: "/images/matras before.jpg", after: "/images/matras after.jpg", type: "mattress" },
-];
+const socialIcons = { instagram: Instagram, tiktok: Music2, snapchat: Camera, facebook: Facebook };
+const standardPriceIds = ["banken", "matras", "tapijt", "kinderwagen", "stoelen"];
+const faqIds = ["prijs", "werkwijze", "diensten", "vlekken", "droogtijd"];
+
+function HomeFaq({ item, language, standardPrices, extraText }) {
+  const [open, setOpen] = useState(false);
+  return <article className={open ? "home-v2-faq-item is-open" : "home-v2-faq-item"}><h3><button type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open}><span>{item.question[language]}</span><span aria-hidden="true">+</span></button></h3>{open ? <div>{item.id === "prijs" ? <><ul>{standardPrices.map((price) => <li key={price.id}><span>{price.service[language]}</span><strong>{price.price[language].toLowerCase()}</strong></li>)}</ul><p>{extraText}</p></> : <p>{item.answer[language]}</p>}</div> : null}</article>;
+}
+
+function ResultPair({ item, before, after, lazy = false, language }) {
+  return <div className="home-v2-result-pair"><figure><img loading={lazy ? "lazy" : undefined} src={item.before} alt={`${before}: ${item.title[language]}`} /><figcaption>{before}</figcaption></figure><figure><img loading={lazy ? "lazy" : undefined} src={item.after} alt={`${after}: ${item.title[language]}`} /><figcaption>{after}</figcaption></figure></div>;
+}
 
 function Home() {
   const { language } = useLanguage();
-  const copy = content[language];
-  const displayedPrices = [
-    { id: "banken", price: prices.find((item) => item.id === "banken")?.price[language] },
-    { id: "matras", price: prices.find((item) => item.id === "matras")?.price[language] },
-    { id: "tapijt", price: prices.find((item) => item.id === "tapijt")?.price[language] },
-    { id: "stoelen", price: prices.find((item) => item.id === "stoelen")?.price[language] },
-  ];
-  const homeFaqs = faqs.filter((item) => ["werkwijze", "droogtijd", "vlekken", "voorbereiding"].includes(item.id));
+  const text = copy[language];
+  const priceById = Object.fromEntries(prices.map((item) => [item.id, item]));
+  const standardPrices = standardPriceIds.map((id) => priceById[id]);
+  const featured = results.find((item) => item.id === "bank-1");
+  const supporting = [results.find((item) => item.id === "bank-2"), results.find((item) => item.id === "matras")];
+  const aboutImage = results.find((item) => item.id === "bank-3");
+  const homeFaqs = faqIds.map((id) => faqs.find((item) => item.id === id)).filter(Boolean);
 
-  return (
-    <div className="renew-home">
-      <section className="home-hero">
-        <div className="home-shell home-hero-grid">
-          <div className="home-hero-copy">
-            <p className="home-kicker">{copy.eyebrow}</p>
-            <h1>{copy.title}</h1>
-            <p className="home-lead">{copy.subtitle}</p>
-            <div className="home-hero-price"><span>{copy.priceLabels.banken}</span><strong>{displayedPrices[0].price}</strong></div>
-            <p className="home-price-note">{copy.priceNote}</p>
-            <div className="home-actions"><WhatsAppButton label={copy.primaryCta} /><Link className="btn btn-secondary" to="/prijzen">{copy.pricingCta}</Link></div>
-          </div>
-          <figure className="home-hero-image"><img src="/images/collage RENEW.png" alt="Voor en na resultaat van bankreiniging met professionele apparatuur van RenewCleaning" /></figure>
-        </div>
-      </section>
-
-      <section className="home-trust" aria-label="Waarom RenewCleaning"><div className="home-shell home-trust-grid">
-        {[Sofa, WashingMachine, CircleDollarSign].map((Icon, index) => <div key={copy.trust[index]}><Icon aria-hidden="true" size={22} /><span>{copy.trust[index]}</span></div>)}
-      </div></section>
-
-      <section className="home-section home-pricing-section"><div className="home-shell">
-        <div className="home-section-heading"><p className="home-kicker">{copy.pricesEyebrow}</p><h2>{copy.pricesTitle}</h2><p>{copy.pricesText}</p></div>
-        <div className="home-price-grid">{displayedPrices.map((item) => <article key={item.id} className="home-price-card"><p>{copy.priceLabels[item.id]}</p><strong>{item.price}</strong></article>)}</div>
-        <Link className="home-inline-link" to="/prijzen">{copy.pricingCta} <ArrowRight aria-hidden="true" size={18} /></Link>
-      </div></section>
-
-      <section className="home-section home-results-section"><div className="home-shell">
-        <div className="home-section-heading home-section-heading-dark"><p className="home-kicker">{copy.resultsEyebrow}</p><h2>{copy.resultsTitle}</h2><p>{copy.resultsText}</p></div>
-        <div className="before-after-grid">{resultSets.map((result) => <article className="before-after-card" key={result.id}>
-          <div className="before-after-images"><figure><img loading="lazy" src={result.before} alt={`${copy.before}: ${result.type === "sofa" ? copy.sofaResult : copy.mattressResult}`} /><figcaption>{copy.before}</figcaption></figure><figure><img loading="lazy" src={result.after} alt={`${copy.after}: ${result.type === "sofa" ? copy.sofaResult : copy.mattressResult}`} /><figcaption>{copy.after}</figcaption></figure></div>
-          <p>{result.type === "sofa" ? copy.sofaResult : copy.mattressResult}</p>
-        </article>)}</div>
-      </div></section>
-
-      <section className="home-section home-services-section"><div className="home-shell">
-        <div className="home-section-heading"><p className="home-kicker">{copy.servicesEyebrow}</p><h2>{copy.servicesTitle}</h2><p>{copy.servicesText}</p></div>
-        <div className="home-service-grid">{copy.services.map(([title, description], index) => <article key={title} className="home-service-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
-        <div className="home-actions"><Link className="btn btn-secondary" to="/diensten">{language === "nl" ? "Bekijk alle diensten" : "View all services"}</Link><WhatsAppButton label={copy.primaryCta} /></div>
-      </div></section>
-
-      <section className="home-section home-process-section"><div className="home-shell">
-        <div className="home-section-heading home-section-heading-dark"><p className="home-kicker">{copy.processEyebrow}</p><h2>{copy.processTitle}</h2></div>
-        <div className="home-steps">{copy.steps.map(([number, title, text]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
-      </div></section>
-
-      <section className="home-section home-equipment-section"><div className="home-shell home-equipment-grid">
-        <figure><img loading="lazy" src="/images/collage RENEW.png" alt="Professionele reinigingsapparatuur van RenewCleaning op locatie" /></figure>
-        <div><p className="home-kicker">{copy.equipmentEyebrow}</p><h2>{copy.equipmentTitle}</h2><p>{copy.equipmentText}</p><div className="home-equipment-points"><span><Check aria-hidden="true" size={18} />{language === "nl" ? "Professionele apparatuur" : "Professional equipment"}</span><span><Check aria-hidden="true" size={18} />{language === "nl" ? "Zorgvuldige behandeling" : "Careful treatment"}</span></div></div>
-      </div></section>
-
-      <section className="home-section home-video-section"><div className="home-shell">
-        <div className="home-section-heading"><p className="home-kicker">{copy.videoEyebrow}</p><h2>{copy.videoTitle}</h2></div>
-        <div className="home-video-grid"><figure><video aria-label={`${copy.before}: ${copy.videoTitle}`} muted playsInline controls preload="metadata"><source src="/videos/stoel before vid.mp4" type="video/mp4" /></video><figcaption>{copy.before}</figcaption></figure><figure><video aria-label={`${copy.after}: ${copy.videoTitle}`} muted playsInline controls preload="metadata"><source src="/videos/stoel after vid.mp4" type="video/mp4" /></video><figcaption>{copy.after}</figcaption></figure></div>
-      </div></section>
-
-      <section className="home-section home-custom-section"><div className="home-shell home-custom-panel"><Building2 aria-hidden="true" size={32} /><div><p className="home-kicker">{copy.customEyebrow}</p><h2>{copy.customTitle}</h2><p>{copy.customText}</p></div><WhatsAppButton label={copy.customCta} /></div></section>
-
-      <section className="home-section home-faq-section"><div className="home-shell">
-        <div className="home-section-heading"><p className="home-kicker">{copy.faqEyebrow}</p><h2>{copy.faqTitle}</h2></div>
-        <div className="faq-list">{homeFaqs.map((item) => <FAQItem key={item.id} item={item} />)}</div>
-        <Link className="home-inline-link" to="/faq">{copy.faqCta} <ArrowRight aria-hidden="true" size={18} /></Link>
-      </div></section>
-
-      <CTASection title={language === "nl" ? "Wilt u weten wat uw reiniging exact kost?" : "Would you like to know the exact cost of your cleaning?"} text={language === "nl" ? "Stuur foto's via WhatsApp en ontvang een duidelijke prijs voor uw situatie." : "Send photos via WhatsApp and receive a clear price for your situation."} whatsAppLabel={copy.primaryCta} />
-    </div>
-  );
+  return <div className="renew-home renew-home-v2">
+    <section className="home-v2-hero" id="home"><div className="home-v2-shell home-v2-hero-grid"><div><p className="home-v2-kicker">{text.hero[0]}</p><h1>{text.hero[1]}</h1><p className="home-v2-lead">{text.hero[2]}</p><div className="home-v2-hero-price"><span>{language === "nl" ? "Bank reinigen" : "Sofa cleaning"}</span><strong>{priceById.banken.price[language]}</strong></div><p className="home-v2-price-note">{text.priceNote}</p><div className="home-v2-actions"><WhatsAppButton label={text.primaryCta} /><a className="btn btn-secondary" href="#prijzen">{text.pricesCta}</a></div></div><figure className="home-v2-hero-media"><img src="/images/collage RENEW.png" alt="Voor en na resultaat van bankreiniging met professionele apparatuur van RenewCleaning" /></figure></div></section>
+    <section className="home-v2-trust" aria-label="Waarom RenewCleaning"><div className="home-v2-shell home-v2-trust-grid">{text.trust.map((item) => <span key={item}><Check aria-hidden="true" size={18} />{item}</span>)}</div></section>
+    <section className="home-v2-section" id="diensten"><div className="home-v2-shell"><header className="home-v2-heading"><p className="home-v2-kicker">{text.services[0]}</p><h2>{text.services[1]}</h2><p>{text.services[2]}</p></header><div className="home-v2-services-grid">{text.serviceCards.map(([id, title, description]) => <article key={id}><Sparkles aria-hidden="true" size={19} /><h3>{title}</h3><p>{description}</p></article>)}</div><Link className="home-v2-inline-link" to="/diensten">{text.services[3]}<ArrowRight aria-hidden="true" size={18} /></Link></div></section>
+    <section className="home-v2-section home-v2-pricing" id="prijzen"><div className="home-v2-shell"><header className="home-v2-heading"><p className="home-v2-kicker">{text.pricing[0]}</p><h2>{text.pricing[1]}</h2><p>{text.pricing[2]}</p></header><div className="home-v2-prices-grid">{standardPrices.map((item) => <article key={item.id}><p>{item.service[language]}</p><strong>{item.price[language]}</strong></article>)}</div><p className="home-v2-other-price"><strong>{priceById["other-textile"].service[language]}</strong> — {priceById["other-textile"].price[language]}</p><div className="home-v2-actions"><WhatsAppButton label={text.primaryCta} /></div></div></section>
+    <section className="home-v2-section home-v2-results" id="resultaten"><div className="home-v2-shell"><header className="home-v2-heading home-v2-heading-dark"><p className="home-v2-kicker">{text.results[0]}</p><h2>{text.results[1]}</h2><p>{text.results[2]}</p></header><article className="home-v2-featured-result"><ResultPair item={featured} before={text.results[4]} after={text.results[5]} language={language} /><h3>{featured.title[language]}</h3><p>{featured.caption[language]}</p></article><div className="home-v2-supporting-results">{supporting.map((item) => <article key={item.id}><ResultPair item={item} before={text.results[4]} after={text.results[5]} language={language} lazy /><h3>{item.title[language]}</h3></article>)}</div><Link className="home-v2-inline-link home-v2-inline-link-light" to="/resultaten">{text.results[3]}<ArrowRight aria-hidden="true" size={18} /></Link></div></section>
+    <section className="home-v2-section home-v2-process" id="werkwijze"><div className="home-v2-shell"><header className="home-v2-heading"><p className="home-v2-kicker">{text.process[0]}</p><h2>{text.process[1]}</h2></header><ol className="home-v2-process-list">{text.process[2].map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}</ol></div></section>
+    <section className="home-v2-section home-v2-business" id="zakelijk"><div className="home-v2-shell home-v2-business-grid"><Building2 aria-hidden="true" size={32} /><div><p className="home-v2-kicker">{text.business[0]}</p><h2>{text.business[1]}</h2><p>{text.business[2]}</p></div><div className="home-v2-actions"><WhatsAppButton label={text.business[3]} /><Link className="btn btn-secondary" to="/zakelijk">{text.business[4]}</Link></div></div></section>
+    <section className="home-v2-section" id="over-ons"><div className="home-v2-shell home-v2-about-grid"><figure><img loading="lazy" src={aboutImage.after} alt="Professioneel gereinigde stoffen bank van RenewCleaning" /></figure><div><p className="home-v2-kicker">{text.about[0]}</p><h2>{text.about[1]}</h2><p>{text.about[2]}</p><ul>{text.about[4].map((item) => <li key={item}><Check aria-hidden="true" size={18} />{item}</li>)}</ul><Link className="home-v2-inline-link" to="/over-ons">{text.about[3]}<ArrowRight aria-hidden="true" size={18} /></Link></div></div></section>
+    <section className="home-v2-section home-v2-faq" id="faq"><div className="home-v2-shell home-v2-faq-shell"><header className="home-v2-heading"><p className="home-v2-kicker">{text.faq[0]}</p><h2>{text.faq[1]}</h2></header><div className="home-v2-faq-list">{homeFaqs.map((item) => <HomeFaq key={item.id} item={item} language={language} standardPrices={standardPrices} extraText={text.faq[3]} />)}</div><Link className="home-v2-inline-link" to="/faq">{text.faq[2]}<ArrowRight aria-hidden="true" size={18} /></Link></div></section>
+    <section className="home-v2-contact" id="contact"><div className="home-v2-shell"><div className="home-v2-contact-intro"><div><p className="home-v2-kicker">{text.contact[0]}</p><h2>{text.contact[1]}</h2><p>{text.contact[2]}</p></div><WhatsAppButton label={text.primaryCta} /></div><div className="home-v2-contact-grid"><ol>{text.contactSteps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}</ol><div className="home-v2-contact-methods"><a href={company.whatsappHref} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true" size={21} /><span><strong>WhatsApp</strong><small>{text.whatsappHelp}</small></span></a><a href={company.phoneHref}><Phone aria-hidden="true" size={21} /><span><strong>{company.phoneDisplay}</strong><small>{text.callHelp}</small></span></a><a href={`mailto:${company.email}`}><Mail aria-hidden="true" size={21} /><span><strong>{company.email}</strong><small>{text.mailHelp}</small></span></a></div></div><div className="home-v2-socials"><div><p className="home-v2-kicker">{language === "nl" ? "Volg RenewCleaning" : "Follow RenewCleaning"}</p><h2>{text.contact[3]}</h2><p>{text.contact[4]}</p></div><div className="home-v2-social-grid">{socials.map((social) => { const Icon = socialIcons[social.icon]; const card = <><Icon aria-hidden="true" size={22} /><span><strong>{social.label}</strong><small>{social.handle}</small></span></>; return social.url ? <a key={social.id} href={social.url} target="_blank" rel="noreferrer" aria-label={`${social.label}: ${social.handle}`}>{card}</a> : <div key={social.id} aria-label={`${social.label}: ${social.handle}`}>{card}</div>; })}</div></div></div></section>
+  </div>;
 }
 
 export default Home;

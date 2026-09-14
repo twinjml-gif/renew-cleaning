@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import logo from "../assets/renewcleaning-logo.svg";
 import { company } from "../data/company.js";
 import { navigation } from "../data/navigation.js";
@@ -7,7 +7,9 @@ import { useLanguage } from "./LanguageProvider.jsx";
 
 function Footer() {
   const { language, t } = useLanguage();
+  const { pathname } = useLocation();
   const year = new Date().getFullYear();
+  const isHome = pathname === "/";
 
   return (
     <footer className="footer">
@@ -24,9 +26,9 @@ function Footer() {
           <h2 className="footer-heading">{t.common.menu}</h2>
           <div className="footer-links">
             {navigation.map((item) => (
-              <NavLink key={item.path} to={item.path}>
+              <a key={item.section} href={isHome ? `#${item.section}` : `/#${item.section}`}>
                 {item.label[language]}
-              </NavLink>
+              </a>
             ))}
           </div>
         </div>
