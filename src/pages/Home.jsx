@@ -1,5 +1,5 @@
 import { ArrowRight, Building2, Camera, Check, Facebook, Instagram, Mail, MessageCircle, Music2, Phone, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
 import HomeSectionTracking from "../components/HomeSectionTracking.jsx";
@@ -54,10 +54,13 @@ const faqIds = ["prijs", "werkwijze", "diensten", "vlekken", "droogtijd"];
 
 function HomeFaq({ item, language, standardPrices, extraText }) {
   const [open, setOpen] = useState(false);
+  const openRef = useRef(false);
 
   function toggle() {
-    if (!open) track("faq_open", { route: "/", faq_id: item.id });
-    setOpen(!open);
+    const nextOpen = !openRef.current;
+    openRef.current = nextOpen;
+    if (nextOpen) track("faq_open", { route: "/", faq_id: item.id });
+    setOpen(nextOpen);
   }
 
   return <article className={open ? "home-v2-faq-item is-open" : "home-v2-faq-item"}><h3><button type="button" onClick={toggle} aria-expanded={open}><span>{item.question[language]}</span><span aria-hidden="true">+</span></button></h3>{open ? <div>{item.id === "prijs" ? <><ul>{standardPrices.map((price) => <li key={price.id}><span>{price.service[language]}</span><strong>{price.price[language].toLowerCase()}</strong></li>)}</ul><p>{extraText}</p></> : <p>{item.answer[language]}</p>}</div> : null}</article>;

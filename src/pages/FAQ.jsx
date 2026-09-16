@@ -1,5 +1,5 @@
 import { ChevronDown, Check } from "lucide-react";
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
 import { prices } from "../data/pricing.js";
@@ -29,12 +29,15 @@ const pageContent = {
 
 function AccordionItem({ item, faqId }) {
   const [isOpen, setIsOpen] = useState(false);
+  const openRef = useRef(false);
   const id = useId();
   const { pathname } = useLocation();
 
   function toggle() {
-    if (!isOpen) track("faq_open", { route: pathname, faq_id: faqId });
-    setIsOpen(!isOpen);
+    const nextOpen = !openRef.current;
+    openRef.current = nextOpen;
+    if (nextOpen) track("faq_open", { route: pathname, faq_id: faqId });
+    setIsOpen(nextOpen);
   }
 
   return (
