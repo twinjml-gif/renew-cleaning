@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import logo from "../assets/renewcleaning-logo.svg";
 import { company } from "../data/company.js";
 import { navigation } from "../data/navigation.js";
+import { track } from "../utils/analytics.js";
 import { useLanguage } from "./LanguageProvider.jsx";
 
 function Footer() {
@@ -26,7 +27,7 @@ function Footer() {
           <h2 className="footer-heading">{t.common.menu}</h2>
           <div className="footer-links">
             {navigation.map((item) => (
-              <a key={item.section} href={isHome ? `#${item.section}` : `/#${item.section}`}>
+              <a key={item.section} href={isHome ? `#${item.section}` : `/#${item.section}`} onClick={() => track("navigation_click", { target_section: item.section, origin: "footer" })}>
                 {item.label[language]}
               </a>
             ))}
@@ -36,11 +37,11 @@ function Footer() {
         <div>
           <h2 className="footer-heading">{t.contactPage.detailsTitle}</h2>
           <div className="footer-contact">
-            <a href={company.phoneHref}>
+            <a href={company.phoneHref} onClick={() => track("phone_click", { route: pathname, cta_location: "footer", section: "footer" })}>
               <Phone aria-hidden="true" size={18} />
               {company.phoneDisplay}
             </a>
-            <a href={`mailto:${company.email}`}>
+            <a href={`mailto:${company.email}`} onClick={() => track("email_click", { route: pathname, cta_location: "footer", section: "footer" })}>
               <Mail aria-hidden="true" size={18} />
               {company.email}
             </a>

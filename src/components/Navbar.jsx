@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import logo from "../assets/renewcleaning-logo.svg";
 import { company } from "../data/company.js";
 import { navigation } from "../data/navigation.js";
+import { track } from "../utils/analytics.js";
 import LanguageSwitcher from "./LanguageSwitcher.jsx";
 import { useLanguage } from "./LanguageProvider.jsx";
 
@@ -65,6 +66,10 @@ function Navbar() {
     setIsOpen(false);
   }
 
+  function trackNavigation(section, origin) {
+    track("navigation_click", { target_section: section, origin });
+  }
+
   function hrefFor(section) {
     return isHome ? `#${section}` : `/#${section}`;
   }
@@ -72,7 +77,7 @@ function Navbar() {
   return (
     <header className="site-header">
       <nav className="nav-shell" aria-label="Primary navigation">
-        <a className="brand-link" href={hrefFor("home")} onClick={closeMenu}>
+        <a className="brand-link" href={hrefFor("home")} onClick={() => { trackNavigation("home", "header"); closeMenu(); }}>
           <img className="brand-logo" src={logo} alt={`${company.name} logo`} />
         </a>
 
@@ -82,6 +87,7 @@ function Navbar() {
               key={item.section}
               className={isHome && activeSection === item.section ? "nav-link is-active" : "nav-link"}
               href={hrefFor(item.section)}
+              onClick={() => trackNavigation(item.section, "header")}
               aria-current={isHome && activeSection === item.section ? "location" : undefined}
             >
               {item.label[language]}
@@ -97,6 +103,7 @@ function Navbar() {
             target="_blank"
             rel="noreferrer"
             aria-label={t.common.whatsapp}
+            onClick={() => track("whatsapp_click", { route: pathname, cta_location: "header", cta_text: t.common.whatsapp })}
           >
             <MessageCircle aria-hidden="true" size={20} />
           </a>
@@ -120,7 +127,7 @@ function Navbar() {
               key={item.section}
               className={isHome && activeSection === item.section ? "mobile-nav-link is-active" : "mobile-nav-link"}
               href={hrefFor(item.section)}
-              onClick={closeMenu}
+              onClick={() => { trackNavigation(item.section, "mobile_menu"); closeMenu(); }}
               aria-current={isHome && activeSection === item.section ? "location" : undefined}
             >
               {item.label[language]}

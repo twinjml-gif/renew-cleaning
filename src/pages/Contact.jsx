@@ -1,4 +1,5 @@
 import { Camera, Facebook, Instagram, Mail, MessageCircle, Music2, Phone } from "lucide-react";
+import TrackedContactLink from "../components/TrackedContactLink.jsx";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
 import { company } from "../data/company.js";
 import { socials } from "../data/socials.js";
@@ -53,11 +54,12 @@ const pageContent = {
 
 const socialIcons = { instagram: Instagram, tiktok: Music2, snapchat: Camera, facebook: Facebook };
 
-function ContactMethod({ icon: Icon, title, text, href, primary = false }) {
+function ContactMethod({ icon: Icon, title, text, href, primary = false, eventName, tracking }) {
   const Tag = href ? "a" : "div";
   const props = href ? { href } : {};
+  const content = <><Icon aria-hidden="true" size={22} /><span><strong>{title}</strong>{text ? <small>{text}</small> : null}</span></>;
 
-  return <Tag className={primary ? "contact-method is-primary" : "contact-method"} {...props}><Icon aria-hidden="true" size={22} /><span><strong>{title}</strong>{text ? <small>{text}</small> : null}</span></Tag>;
+  return eventName ? <TrackedContactLink className={primary ? "contact-method is-primary" : "contact-method"} eventName={eventName} tracking={tracking} {...props}>{content}</TrackedContactLink> : <Tag className={primary ? "contact-method is-primary" : "contact-method"} {...props}>{content}</Tag>;
 }
 
 function Contact() {
@@ -66,9 +68,9 @@ function Contact() {
 
   return (
     <div className="renew-contact">
-      <section className="contact-refresh-hero"><div className="contact-shell contact-hero-grid"><div><p className="contact-kicker">{copy.eyebrow}</p><h1>{copy.title}</h1><p className="contact-lead">{copy.intro}</p><div className="contact-refresh-actions"><WhatsAppButton label={copy.primaryCta} /><a className="btn btn-secondary" href={company.phoneHref}><Phone aria-hidden="true" size={20} />{copy.callCta}</a></div></div><aside className="contact-quick-panel" aria-label={copy.contactTitle}><p className="contact-kicker">{copy.contactTitle}</p><p>{copy.contactText}</p><div className="contact-methods"><ContactMethod icon={MessageCircle} title={copy.whatsappTitle} text={copy.whatsappText} href={company.whatsappHref} primary /><ContactMethod icon={Phone} title={copy.phoneTitle} text={company.phoneDisplay} href={company.phoneHref} /><ContactMethod icon={Mail} title={copy.emailTitle} text={company.email} href={`mailto:${company.email}`} /></div></aside></div></section>
+      <section className="contact-refresh-hero"><div className="contact-shell contact-hero-grid"><div><p className="contact-kicker">{copy.eyebrow}</p><h1>{copy.title}</h1><p className="contact-lead">{copy.intro}</p><div className="contact-refresh-actions"><WhatsAppButton label={copy.primaryCta} /><TrackedContactLink eventName="phone_click" tracking={{ cta_location: "hero", section: "contact" }} className="btn btn-secondary" href={company.phoneHref}><Phone aria-hidden="true" size={20} />{copy.callCta}</TrackedContactLink></div></div><aside className="contact-quick-panel" aria-label={copy.contactTitle}><p className="contact-kicker">{copy.contactTitle}</p><p>{copy.contactText}</p><div className="contact-methods"><ContactMethod icon={MessageCircle} title={copy.whatsappTitle} text={copy.whatsappText} href={company.whatsappHref} primary eventName="whatsapp_click" tracking={{ cta_location: "quick_panel", section: "contact", cta_text: "WhatsApp" }} /><ContactMethod icon={Phone} title={copy.phoneTitle} text={company.phoneDisplay} href={company.phoneHref} eventName="phone_click" tracking={{ cta_location: "quick_panel", section: "contact" }} /><ContactMethod icon={Mail} title={copy.emailTitle} text={company.email} href={`mailto:${company.email}`} eventName="email_click" tracking={{ cta_location: "quick_panel", section: "contact" }} /></div></aside></div></section>
       <section className="contact-flow-section"><div className="contact-shell"><header className="contact-heading"><p className="contact-kicker">{copy.flowEyebrow}</p><h2>{copy.flowTitle}</h2></header><ol className="contact-flow">{copy.steps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}</ol></div></section>
-      <section className="contact-social-section"><div className="contact-shell"><header className="contact-heading"><p className="contact-kicker">{copy.socialEyebrow}</p><h2>{copy.socialTitle}</h2><p>{copy.socialText}</p></header><div className="contact-social-grid">{socials.map((social) => { const Icon = socialIcons[social.icon]; const content = <><Icon aria-hidden="true" size={23} /><span><strong>{social.label}</strong><small>{social.handle}</small></span></>; return social.url ? <a key={social.id} href={social.url} target="_blank" rel="noreferrer" aria-label={`${social.label}: ${social.handle}`}>{content}</a> : <div key={social.id} aria-label={`${social.label}: ${social.handle}`}>{content}</div>; })}</div></div></section>
+      <section className="contact-social-section"><div className="contact-shell"><header className="contact-heading"><p className="contact-kicker">{copy.socialEyebrow}</p><h2>{copy.socialTitle}</h2><p>{copy.socialText}</p></header><div className="contact-social-grid">{socials.map((social) => { const Icon = socialIcons[social.icon]; const content = <><Icon aria-hidden="true" size={23} /><span><strong>{social.label}</strong><small>{social.handle}</small></span></>; return social.url ? <TrackedContactLink key={social.id} eventName="social_click" tracking={{ section: "contact", platform: social.id }} href={social.url} target="_blank" rel="noreferrer" aria-label={`${social.label}: ${social.handle}`}>{content}</TrackedContactLink> : <div key={social.id} aria-label={`${social.label}: ${social.handle}`}>{content}</div>; })}</div></div></section>
       <section className="contact-final-cta"><div className="contact-shell contact-final-grid"><div><p className="contact-kicker">{copy.finalEyebrow}</p><h2>{copy.finalTitle}</h2><p>{copy.finalText}</p></div><WhatsAppButton label={copy.primaryCta} /></div></section>
     </div>
   );

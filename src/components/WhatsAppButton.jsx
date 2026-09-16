@@ -1,9 +1,13 @@
 import { MessageCircle } from "lucide-react";
+import { useLocation } from "react-router-dom";
 import { company } from "../data/company.js";
+import { track } from "../utils/analytics.js";
 import { useLanguage } from "./LanguageProvider.jsx";
 
-function WhatsAppButton({ className = "", variant = "primary", label }) {
+function WhatsAppButton({ className = "", variant = "primary", label, tracking = {} }) {
   const { t } = useLanguage();
+  const { pathname } = useLocation();
+  const ctaText = label || t.common.requestQuote;
 
   return (
     <a
@@ -11,9 +15,15 @@ function WhatsAppButton({ className = "", variant = "primary", label }) {
       href={company.whatsappHref}
       target="_blank"
       rel="noreferrer"
+      onClick={() => track("whatsapp_click", {
+        route: pathname,
+        cta_location: "cta",
+        cta_text: ctaText,
+        ...tracking,
+      })}
     >
       <MessageCircle aria-hidden="true" size={20} />
-      <span>{label || t.common.requestQuote}</span>
+      <span>{ctaText}</span>
     </a>
   );
 }

@@ -1,8 +1,9 @@
 import { ChevronDown, Check } from "lucide-react";
 import { useId, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
 import { prices } from "../data/pricing.js";
+import { track } from "../utils/analytics.js";
 import { useLanguage } from "../components/LanguageProvider.jsx";
 
 const pageContent = {
@@ -26,13 +27,19 @@ const pageContent = {
   },
 };
 
-function AccordionItem({ item }) {
+function AccordionItem({ item, faqId }) {
   const [isOpen, setIsOpen] = useState(false);
   const id = useId();
+  const { pathname } = useLocation();
+
+  function toggle() {
+    if (!isOpen) track("faq_open", { route: pathname, faq_id: faqId });
+    setIsOpen(!isOpen);
+  }
 
   return (
     <article className={isOpen ? "faq-refresh-item is-open" : "faq-refresh-item"}>
-      <h3><button type="button" aria-expanded={isOpen} aria-controls={id} onClick={() => setIsOpen((open) => !open)}><span>{item.question}</span><ChevronDown aria-hidden="true" size={21} /></button></h3>
+      <h3><button type="button" aria-expanded={isOpen} aria-controls={id} onClick={toggle}><span>{item.question}</span><ChevronDown aria-hidden="true" size={21} /></button></h3>
       <div id={id} hidden={!isOpen}>{item.content || <p>{item.answer}</p>}</div>
     </article>
   );
@@ -70,7 +77,7 @@ function FAQ() {
     <div className="renew-faq">
       <section className="faq-refresh-hero"><div className="faq-shell"><p className="faq-kicker">{copy.eyebrow}</p><h1>{copy.title}</h1><p className="faq-lead">{copy.intro}</p><div className="faq-actions"><WhatsAppButton label={copy.primaryCta} /><Link className="btn btn-secondary" to="/prijzen">{copy.pricesCta}</Link></div></div></section>
       <section className="faq-trust" aria-label="Praktische voordelen"><div className="faq-shell faq-trust-grid">{copy.trust.map((item) => <span key={item}><Check aria-hidden="true" size={18} />{item}</span>)}</div></section>
-      <section className="faq-main-section"><div className="faq-shell faq-content-shell"><header className="faq-heading"><p className="faq-kicker">{copy.faqEyebrow}</p><h2>{copy.faqTitle}</h2></header><div className="faq-refresh-list">{faqItems.map((item) => <AccordionItem key={item.question} item={item} />)}</div></div></section>
+      <section className="faq-main-section"><div className="faq-shell faq-content-shell"><header className="faq-heading"><p className="faq-kicker">{copy.faqEyebrow}</p><h2>{copy.faqTitle}</h2></header><div className="faq-refresh-list">{faqItems.map((item, index) => <AccordionItem key={item.question} item={item} faqId={`faq_${index + 1}`} />)}</div></div></section>
       <section className="faq-final-cta"><div className="faq-shell faq-final-grid"><div><p className="faq-kicker">{copy.eyebrow}</p><h2>{copy.finalTitle}</h2><p>{copy.finalText}</p></div><WhatsAppButton label={copy.primaryCta} /></div></section>
     </div>
   );

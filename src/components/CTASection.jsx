@@ -1,6 +1,7 @@
 import { Mail } from "lucide-react";
 import { company } from "../data/company.js";
 import WhatsAppButton from "./WhatsAppButton.jsx";
+import TrackedContactLink from "./TrackedContactLink.jsx";
 import { useLanguage } from "./LanguageProvider.jsx";
 
 function CTASection({ title, text, whatsAppLabel }) {
@@ -14,11 +15,11 @@ function CTASection({ title, text, whatsAppLabel }) {
         <p>{text}</p>
       </div>
       <div className="cta-actions">
-        <WhatsAppButton label={whatsAppLabel} />
-        <a className="btn btn-secondary" href={`mailto:${company.email}`}>
+        <WhatsAppButton label={whatsAppLabel} tracking={{ cta_location: "final_cta", section: "final_cta" }} />
+        <TrackedContactLink eventName="email_click" tracking={{ cta_location: "final_cta", section: "final_cta" }} className="btn btn-secondary" href={`mailto:${company.email}`}>
           <Mail aria-hidden="true" size={20} />
           <span>{t.common.email}</span>
-        </a>
+        </TrackedContactLink>
       </div>
     </section>
   );
